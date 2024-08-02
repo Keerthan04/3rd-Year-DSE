@@ -1,0 +1,33 @@
+#include<stdio.h>
+int reverseDigits(int num) {
+            int reversed = 0;
+            while (num != 0)
+            {
+                  int digit = num % 10;
+                  reversed = reversed * 10 + digit;
+                  num /= 10;
+            }
+            return reversed;
+}
+int main()
+{
+        int arr[9]={18, 523, 301, 1234, 2, 14, 108, 150, 1928};
+        int i;
+        printf("Given Array\n");
+        for(i=0;i<9;i++)
+        {
+                printf("%d ",arr[i]);
+        }
+        printf("\n");
+        for(i=0;i<9;i++)
+        {
+                arr[i]=reverseDigits(arr[i]);
+        }
+        printf("Reversed Array\n");
+        for(i=0;i<9;i++)
+        {
+                printf("%d ",arr[i]);
+        }
+        printf("\n");
+        return 0;
+}

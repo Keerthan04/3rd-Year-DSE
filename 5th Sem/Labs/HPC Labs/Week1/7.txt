@@ -1,0 +1,37 @@
+ 7.
+#include<stdio.h>
+int main()
+{
+        int a[5][5],b[5][5],i,j,k,min,max;
+        printf("Matrix A elements:\n");
+        for(i=0;i<5;i++)
+                for(j=0;j<5;j++)
+                        scanf("%d",&a[i][j]);
+        for(i=0;i<5;i++)
+                for(j=0;j<5;j++)
+                        if(j>i)
+                        {
+                                min=a[i][j];
+                                for(k=0;k<5;k++)
+                                        if(a[i][k]<min)
+                                                min=a[i][k];
+                                b[i][j]=min;
+                        }
+                        else if(j<i)
+                        {
+                                max=a[i][j];
+                                for(k=0;k<5;k++)
+                                        if(a[i][k]>max)
+                                                max=a[i][k];
+                                b[i][j]=max;
+                        }
+                        else
+                                b[i][j] = 0;
+        printf("Matrix B:\n");
+        for(i=0;i<5;i++)
+        {
+                for(j=0;j<5;j++)
+                        printf("%d\t",b[i][j]);
+                printf("\n");
+        }
+}

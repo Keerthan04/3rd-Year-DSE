@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+        char word[100];
+        printf("Enter the Word: ");
+        scanf("%s",word);
+        int i,j;
+        printf("New Word is: ");
+        for(i=0;i<strlen(word);i++)
+        {
+                for(j=0;j<=i;j++)
+                {
+                        printf("%c",word[i]);
+                }
+
+        }
+        return 0;
+}

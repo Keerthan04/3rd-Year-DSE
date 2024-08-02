@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<math.h>
+int dtb(int d)
+{
+        int b=0,p=1;
+        while(d)
+        {
+                b+=!(d%2)*p;
+                d=d/2;
+                p*=10;
+        }
+        return b;
+}
+int btd(int b)
+{ 
+        int d=0,p=1,r;
+        while(b)
+        { 
+                r=b%10; 
+                d+=r*p; 
+                p*=2;
+                b/=10;
+        }
+        return d;
+}
+int main()
+{
+        int m,n;
+        printf("M,N: ");scanf("%d %d",&m,&n);
+        int a[m][n],b[m][n],d[m][n],i,j;
+        printf("Matrix A elements:\n");
+        for(i=0;i<m;i++)
+                for(j=0;j<n;j++)
+                        scanf("%d",&a[i][j]);
+        for(i=0;i<m;i++)
+                for(j=0;j<n;j++)
+                        if(i!=0 && i!=m-1 && j!=0 && j!=n-1)
+                        {
+                                b[i][j]=dtb(a[i][j]);
+                                d[i][j]=btd(b[i][j]);
+                        }
+                        else
+                        {
+                                b[i][j]=a[i][j];
+                                d[i][j]=a[i][j];
+                        }
+        printf("Matrix B:\n");
+        for(i=0;i<m;i++)
+        {
+                for(j=0;j<n;j++)
+                        printf("%d\t",b[i][j]);
+                printf("\n");
+        }
+        printf("Matrix D:\n");
+        for(i=0;i<m;i++)
+        {
+                for(j=0;j<n;j++)
+                        printf("%d\t",d[i][j]);
+                printf("\n");
+        }
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<omp.h>
+#include<math.h>
+
+int main(){
+        int i;
+        printf("Please enter the value for i: \n");
+        scanf("%d",&i);
+        omp_set_num_threads(4);
+        #pragma omp parallel
+        {
+                int x = omp_get_thread_num();
+                double power = pow(i,x);
+                printf("The power for the thread id %d is %.2f \n",x,power);
+        }
+        return 0;
+}
