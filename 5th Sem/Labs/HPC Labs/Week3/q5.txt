@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<omp.h>
+
+int main(){
+	int n, c_sum = 0, a_sum = 0, r_sum = 0, l_sum = 0, check = 0;
+	printf("Enter n: ");
+	scanf("%d", &n);
+	
+	#pragma omp parallel reduction(+:r_sum)
+	{
+		#pragma omp for
+		for(int i = 0; i < n; i++)
+			r_sum += i;
+	}
+
+	omp_lock_t lock;
+	omp_init_lock(&lock);
+
+	#pragma omp parallel for
+	for(int i = 0; i < n; i++){
+		#pragma omp atomic
+		a_sum += i;
+
+		#pragma omp critical
+		{
+			c_sum += i;
+		}
+
+		omp_set_lock(&lock);
+		l_sum += i;
+		omp_unset_lock(&lock);
+	}
+
+	omp_destroy_lock(&lock);
+	
+	for(int i = 0; i < n; i++) check += i;
+	
+	printf("Critical: %d, Atomic: %d, Reduction: %d, Lock: %d, Serial: %d\n", c_sum, a_sum, r_sum, l_sum, check);
+}

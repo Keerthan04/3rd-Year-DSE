@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<omp.h>
+
+int main(){
+	int len, temp;
+	printf("Enter size: ");
+	scanf("%d", &len);
+	
+	int a[len];
+	printf("Enter array: ");
+	for(int i = 0; i < len; i++) scanf("%d", a + i);
+
+	for(int i = 0; i < len; i++){
+		#pragma omp parallel for
+		for(int j = 1; j < len - 1; j += 2)
+		if(a[j] > a[j + 1]){
+			temp = a[j];
+			a[j] = a[j + 1];
+			a[j + 1] = temp;
+		}
+
+		#pragma omp parallel for 
+		for(int j = 1; j < len; j += 2)
+		if(a[j - 1] > a[j]){
+			temp = a[j];
+			a[j] = a[j - 1];
+			a[j - 1] = temp;
+		}
+		
+		for(int i = 0; i < len; i++) printf("%d ", a[i]);
+		printf("\n");
+				 
+	}
+	
+	for(int i = 0; i < len; i++) printf("%d ", a[i]);
+}
+	
+	

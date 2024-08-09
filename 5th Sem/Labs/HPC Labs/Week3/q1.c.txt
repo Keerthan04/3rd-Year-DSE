@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
+
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main() {
+    int n, threads;
+
+    printf("Enter the number of elements in the array: \n");
+    scanf("%d", &n);
+    int *a = (int *)malloc(n * sizeof(int));
+
+    printf("Enter the elements of the array: \n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the number of threads to execute the program: \n");
+    scanf("%d", &threads);
+
+    // Sequential Sort
+    double seqbegin = omp_get_wtime();
+    int min_ele;
+    for (int i = 0; i < n - 1; i++) {
+        min_ele = i;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] < a[min_ele]) {
+                min_ele = j;
+            }
+        }
+        if (min_ele != i) {
+            swap(&a[i], &a[min_ele]);
+        }
+    }
+    double seqend = omp_get_wtime();
+    double seqtime = seqend - seqbegin;
+
+    printf("The resulting array (sequential) is: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
+    printf("Time for %d elements with %d threads in sequential sort: %f seconds\n", n, threads, seqtime);
+
+    // Parallel Sort
+    int *a_copy = (int *)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        a_copy[i] = a[i];
+    }
+
+    double parbegin = omp_get_wtime();
+#pragma omp parallel num_threads(threads)
+    {
+#pragma omp for
+        for (int i = 0; i < n - 1; i++) {
+            int local_min_ele = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a_copy[j] < a_copy[local_min_ele]) {
+                    local_min_ele = j;
+                }
+            }
+            if (local_min_ele != i) {
+                #pragma omp critical
+                {
+                    swap(&a_copy[i], &a_copy[local_min_ele]);
+                }
+            }
+        }
+    }
+    double parend = omp_get_wtime();
+    double partime = parend - parbegin;
+
+    printf("The resulting array (parallel) is: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a_copy[i]);
+    }
+    printf("\n");
+
+    printf("Time for %d elements with %d threads in parallel sort: %f seconds\n", n, threads, partime);
+
+    double speedup = seqtime / partime;
+    double efficiency = speedup / threads;
+
+    printf("Speedup: %f\n", speedup);
+    printf("Efficiency: %f\n", efficiency);
+
+    free(a);
+    free(a_copy);
+
+    return 0;
+}

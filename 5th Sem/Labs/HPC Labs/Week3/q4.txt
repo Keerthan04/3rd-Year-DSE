@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
+
+// Function prototypes
+void vector_add(const int *a, const int *b, int *result, int size);
+void vector_subtract(const int *a, const int *b, int *result, int size);
+void vector_multiply(const int *a, const int *b, int *result, int size);
+
+// Vector addition function
+void vector_add(const int *a, const int *b, int *result, int size) {
+    #pragma omp parallel for
+    for (int i = 0; i < size; i++) {
+        result[i] = a[i] + b[i];
+    }
+}
+
+// Vector subtraction function
+void vector_subtract(const int *a, const int *b, int *result, int size) {
+    #pragma omp parallel for
+    for (int i = 0; i < size; i++) {
+        result[i] = a[i] - b[i];
+    }
+}
+
+// Vector multiplication function
+void vector_multiply(const int *a, const int *b, int *result, int size) {
+    #pragma omp parallel for
+    for (int i = 0; i < size; i++) {
+        result[i] = a[i] * b[i];
+    }
+}
+
+int main() {
+    int size;
+
+    printf("Enter the size of the vectors: \n");
+    scanf("%d", &size);
+
+    // Allocate memory for vectors and results
+    int a[size], b[size];
+    int add_result[size], sub_result[size], mul_result[size];
+
+    // Initialize vectors
+    printf("Enter the elements of vector a: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the elements of vector b: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &b[i]);
+    }
+
+    double start_time, end_time;
+
+    start_time = omp_get_wtime();
+
+    #pragma omp parallel sections
+    {
+        #pragma omp section
+        {
+            vector_add(a, b, add_result, size);
+            printf("Vector Addition Result: \n");
+            for (int i = 0; i < size; i++) {
+                printf("%d ", add_result[i]);
+            }
+            printf("\n");
+        }
+
+        #pragma omp section
+        {
+            vector_subtract(a, b, sub_result, size);
+            printf("Vector Subtraction Result: \n");
+            for (int i = 0; i < size; i++) {
+                printf("%d ", sub_result[i]);
+            }
+            printf("\n");
+        }
+
+        #pragma omp section
+        {
+            vector_multiply(a, b, mul_result, size);
+            printf("Vector Multiplication Result: \n");
+            for (int i = 0; i < size; i++) {
+                printf("%d ", mul_result[i]);
+            }
+            printf("\n");
+        }
+    }
+
+    end_time = omp_get_wtime();
+    double time_taken = end_time - start_time;
+    printf("Time taken for vector operations: %f seconds\n", time_taken);
+
+    return 0;
+}

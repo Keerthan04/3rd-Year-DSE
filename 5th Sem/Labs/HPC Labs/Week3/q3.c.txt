@@ -1,0 +1,29 @@
+int main()
+{
+        int n;
+        printf("Enter the number of elements of the array \n");
+        scanf("%d",&n);
+        int a[n];
+        printf("Enter the elements of the array \n");
+        for(int i=0;i<n;i++)
+        {
+                scanf("%d",&a[i]);
+        }
+        int ele;
+        printf("enter the element to be searched");
+        scanf("%d",&ele);
+        int index = -1;
+#pragma omp parallel for num_threads(4)
+        for(int i=0;i<n;i++)
+        {
+                if(a[i]==ele)
+                        index =i;
+
+        }
+        if(index==-1){
+                printf("the element is not present in the array");
+        }
+        else{
+                printf("the element is present in index %d",index);
+        }
+}

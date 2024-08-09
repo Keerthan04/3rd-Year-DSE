@@ -1,0 +1,145 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
+
+// Function prototypes
+void insertion_sort(int *array, int left, int right);
+void quick_sort(int *array, int low, int high);
+int partition(int *array, int low, int high);
+void merge(int *array, int left, int mid, int right);
+void merge_sort(int *array, int left, int right);
+void print_array(int *array, int size);
+
+// Insertion sort function
+void insertion_sort(int *array, int left, int right) {
+    for (int i = left + 1; i <= right; i++) {
+        int key = array[i];
+        int j = i - 1;
+        while (j >= left && array[j] > key) {
+            array[j + 1] = array[j];
+            j--;
+        }
+        array[j + 1] = key;
+    }
+}
+
+// Quick sort functions
+void quick_sort(int *array, int low, int high) {
+    if (low < high) {
+        int pi = partition(array, low, high);
+        #pragma omp parallel sections
+        {
+            #pragma omp section
+            quick_sort(array, low, pi - 1);
+            #pragma omp section
+            quick_sort(array, pi + 1, high);
+        }
+    }
+}
+
+int partition(int *array, int low, int high) {
+    int pivot = array[high];
+    int i = (low - 1);
+    for (int j = low; j < high; j++) {
+        if (array[j] <= pivot) {
+            i++;
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+    int temp = array[i + 1];
+    array[i + 1] = array[high];
+    array[high] = temp;
+    return i + 1;
+}
+
+// Merge sort functions
+void merge(int *array, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int *L = (int *)malloc(n1 * sizeof(int));
+    int *R = (int *)malloc(n2 * sizeof(int));
+
+    for (int i = 0; i < n1; i++)
+        L[i] = array[left + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = array[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            array[k++] = L[i++];
+        } else {
+            array[k++] = R[j++];
+        }
+    }
+
+    while (i < n1) {
+        array[k++] = L[i++];
+    }
+
+    while (j < n2) {
+        array[k++] = R[j++];
+    }
+
+    free(L);
+    free(R);
+}
+
+void merge_sort(int *array, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        merge_sort(array, left, mid);
+        merge_sort(array, mid + 1, right);
+        merge(array, left, mid, right);
+    }
+}
+
+// Print array function
+void print_array(int *array, int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+// Main function
+int main() {
+    int m;
+    printf("Enter the number of elements in the array: \n");
+    scanf("%d", &m);
+
+    int *array = (int *)malloc(m * sizeof(int));
+    printf("Enter the elements of the array: \n");
+    for (int i = 0; i < m; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    // Divide the array into two parts
+    int mid = m / 2;
+
+    // Parallel region
+    #pragma omp parallel sections
+    {
+        #pragma omp section
+        {
+            // Sort first half using insertion sort
+            insertion_sort(array, 0, mid - 1);
+        }
+        #pragma omp section
+        {
+            // Sort second half using quick sort
+            quick_sort(array, mid, m - 1);
+        }
+    }
+
+    // Merge the two sorted halves
+    merge_sort(array, 0, m - 1);
+
+    printf("The merged and sorted array is: \n");
+    print_array(array, m);
+
+    free(array);
+    return 0;
+}
