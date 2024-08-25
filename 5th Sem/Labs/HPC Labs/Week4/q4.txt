@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <mpi.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MAX_STRING_LENGTH 50
+
+int main(int argc, char* argv[]) {
+    int rank, size;
+    char str[MAX_STRING_LENGTH];
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    // Process 0 reads the input string
+    if (rank == 0) {
+        printf("Please enter the string (max length %d):\n", MAX_STRING_LENGTH - 1);
+        fgets(str, MAX_STRING_LENGTH, stdin);
+        // Remove newline character if present
+        str[strcspn(str, "\n")] = '\0';
+    }
+
+    // Broadcast the string to all processes
+    MPI_Bcast(str, MAX_STRING_LENGTH, MPI_CHAR, 0, MPI_COMM_WORLD);
+
+    // Process each character if the rank matches its position in the string
+    //no for loop as all are parallel we can control using the rank
+    int length = strlen(str);
+    if (rank < length) {
+        if (isupper(str[rank])) {
+            str[rank] = tolower(str[rank]);
+        } else {
+            str[rank] = toupper(str[rank]);
+        }
+    }
+
+    // Ensure all processes wait for each other before finalizing
+    MPI_Barrier(MPI_COMM_WORLD);
+
+    // Print the resulting string from all processes
+    printf("Process %d: Resulting string = %s\n", rank, str);
+
+    MPI_Finalize();
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<mpi.h>
+#include<math.h>
+int main(int argc, char* argv[])
+{
+        int rank,size;
+        int x;
+        double power;
+        MPI_Init(&argc,&argv);
+        MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+        MPI_Comm_size(MPI_COMM_WORLD,&size);
+        if(rank == 0){
+                printf("Please enter the value for x \n");
+                fflush(stdout);//To Ensure prompt is printed before waiting for the input
+                scanf("%d", &x);
+                //done so that only one thread takes the unput
+        }
+        //now broadcast the input to all the processes
+        MPI_Bcast(&x, 1, MPI_INT, 0 , MPI_COMM_WORLD);
+        //this is to broadcast so x is the variable, 1 is the one value, MPI int is the datatype and 0 is the rank to broadcast from
+        power = pow(rank,x);
+        printf("the power for the process with rank %d to %d is %f \n",rank,x,power);
+        MPI_Finalize();
+        return 0;
+}
