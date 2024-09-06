@@ -37,3 +37,48 @@ int main(){
 	
 	printf("Critical: %d, Atomic: %d, Reduction: %d, Lock: %d, Serial: %d\n", c_sum, a_sum, r_sum, l_sum, check);
 }
+
+
+#include <omp.h>
+#include <stdio.h>
+
+int main() {
+    int n = 1000;
+    int a_sum = 0, c_sum = 0, l_sum = 0;
+    omp_lock_t lock;
+    omp_init_lock(&lock);
+
+    #pragma omp parallel
+    {
+        int local_a_sum = 0, local_c_sum = 0, local_l_sum = 0;
+
+        #pragma omp for
+        for (int i = 0; i < n; i++) {
+            local_a_sum += i;
+            local_c_sum += i;
+            local_l_sum += i;
+        }
+
+        // Combine the results of each thread into the global variables
+        #pragma omp atomic
+        a_sum += local_a_sum;
+
+        #pragma omp critical
+        {
+            c_sum += local_c_sum;
+        }
+
+        omp_set_lock(&lock);
+        l_sum += local_l_sum;
+        omp_unset_lock(&lock);
+    }
+
+    omp_destroy_lock(&lock);
+
+    printf("Final a_sum: %d\n", a_sum);
+    printf("Final c_sum: %d\n", c_sum);
+    printf("Final l_sum: %d\n", l_sum);
+
+    return 0;
+}
+//better this is
