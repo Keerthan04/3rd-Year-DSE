@@ -33,7 +33,7 @@ We encourage contributions from everyone! If you have code or resources that you
 1. **Fork the repository:** Click on the 'Fork' button at the top right corner of this page.
 2. **Clone your fork:** 
     ```sh
-    git clone https://github.com/Keerthan04/3rd-Year-DSE.git
+    git clone https://github.com/<Your username here>/3rd-Year-DSE.git
     ```
 3. **Create a new branch:** 
     ```sh
