@@ -11,6 +11,7 @@ int main(int argc, char* argv[]){
     int arr[size], val, res = 1;
     if(rank == 0){
         printf("0: Enter array: ");
+        fflush(stdout);
         for(int i = 0; i < size; i++) scanf("%d", arr + i); 
     }
 
