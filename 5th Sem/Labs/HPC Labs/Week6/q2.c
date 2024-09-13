@@ -10,6 +10,7 @@ int main(int argc, char* argv[]){
     int m;
     if(rank == 0){
         printf("0: Enter m: ");
+        fflush(stdout);
         scanf("%d", &m);
     }
 
@@ -18,6 +19,7 @@ int main(int argc, char* argv[]){
 
     if(rank == 0){
         printf("0: Enter elements: ");
+        fflush(stdout);
         for(int i = 0; i < m * size; i++)
             scanf("%d", arr + i);
     }
