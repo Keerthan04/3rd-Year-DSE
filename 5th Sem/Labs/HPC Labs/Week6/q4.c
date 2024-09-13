@@ -10,6 +10,7 @@ int main(int argc, char *argv[]){
     int len, i;
     if(rank == 0){
         printf("0: Enter length: ");
+        fflush(stdout);
         scanf("%d", &len);        
     }
     
@@ -21,11 +22,13 @@ int main(int argc, char *argv[]){
 
     if(rank == 0){
         printf("0: Enter string 1: ");
+        fflush(stdout);
         for(i = 0; i < len; i++){
             scanf(" %c", s1 + i);
         }
 
         printf("0: Enter string 2: ");
+        fflush(stdout);
         for(i = 0; i < len; i++){
             scanf(" %c", s2 + i);
         }
