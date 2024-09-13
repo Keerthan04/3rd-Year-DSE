@@ -28,7 +28,8 @@ int main(int argc, char *argv[]){
         for(int i = 0; input[i] != '\0'; i++)
             if(input[i] == ' ') num++;
         
-        printf("%d: %d words in %s", rank, num, input);   
+        printf("%d: %d words in %s", rank, num, input);
+        MPI_Send(&num,1,MPI_INT,0,0,MPI_COMM_WORLD);
     }
 
     MPI_Finalize();
