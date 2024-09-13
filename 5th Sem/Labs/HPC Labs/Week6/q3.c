@@ -20,6 +20,7 @@ int main(int argc, char *argv[]){
 
     if(rank == 0){
         printf("0: Enter string: ");
+        fflush(stdout);
         for(i = 0; i < len; i++){
             scanf(" %c", str + i);
         }
@@ -28,16 +29,16 @@ int main(int argc, char *argv[]){
 
     MPI_Scatter(str, len/size, MPI_CHAR, sub, len/size, MPI_CHAR, 0, MPI_COMM_WORLD);
 
-    puts(sub);
+    //puts(sub);
 
     int count = 0;
     for(i = 0; i < len/size; i++)
         switch(sub[i]){
-            case 'a': 
-            case 'e': 
-            case 'i': 
-            case 'o': 
-            case 'u': break;
+            case 'a': case 'A':
+            case 'e': case 'E':
+            case 'i': case 'I':
+            case 'o': case 'O':
+            case 'u': case 'U': break;
             default: count++;
         }
     
