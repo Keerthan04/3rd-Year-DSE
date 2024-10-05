@@ -1,5 +1,4 @@
 #include<stdio.h>
-// Something incorrect w/ code
 __global__ void convolution(int* x, int* f, int* r, int n, int m){
     int i = threadIdx.x, j = threadIdx.y;
     if(m-1 - j + i < n) atomicAdd(r + (m-1 - j + i), x[i] * f[j]);
@@ -29,10 +28,11 @@ int main(){
     
     cudaMalloc((void**)&d_x, s * n);
     cudaMalloc((void**)&d_f, s * m);
-    cudaMalloc((void**)&d_r, s * m);
+    cudaMalloc((void**)&d_r, s * n);
     
     cudaMemcpy(d_x, x, s * n, htd);
     cudaMemcpy(d_f, f, s * m, htd);
+    cudaMemcpy(d_r, r, s * n, htd);
     
     dim3 threads(n, m, 1);
     convolution<<<1, threads>>>(d_x, d_f, d_r, n, m);
