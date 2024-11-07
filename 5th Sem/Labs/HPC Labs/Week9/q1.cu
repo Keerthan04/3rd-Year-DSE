@@ -21,7 +21,7 @@ int main(){
 
     power<<<1, dim3(m, n)>>>(d_a, n);
     cudaMemcpy(a, d_a, int_s * m * n, cudaMemcpyDeviceToHost);
-
+    
     for(int i = 0; i < m; i++){
         for(int j = 0; j < n; j++)
             printf("%d ", a[n * i + j]);
