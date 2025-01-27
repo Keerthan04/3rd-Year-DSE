@@ -1,0 +1,1 @@
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -file ./add_sub_mapper.py -mapper 'python3 add_sub_mapper.py' -file ./add_sub_reducer.py -reducer 'python3 add_sub_reducer.py' -input /user/220968002/lab2/mat_input.txt -output /user/220968002/lab2/output/q2out/
