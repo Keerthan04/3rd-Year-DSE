@@ -1,0 +1,6 @@
+S1,Alice,C101
+S2,Bob,C102
+S3,Charlie,C103
+S4,Diana,C104
+S5,Eve,C101
+S6,Frank,C105

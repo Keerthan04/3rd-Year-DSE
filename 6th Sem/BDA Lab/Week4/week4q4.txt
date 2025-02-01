@@ -1,0 +1,3 @@
+Doc1	Hadoop MapReduce is powerful
+Doc2	MapReduce is scalable
+Doc3	Hadoop and Spark are popular

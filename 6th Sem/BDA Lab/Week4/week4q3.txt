@@ -1,0 +1,6 @@
+This is a sample document
+Another document with sample text
+Abhinav is great
+Keerthan is more great
+Hadoop MapReduce is powerful
+Hadoop and Spark are popular
