@@ -1,0 +1,12 @@
+1,Smartphone A,Electronics,5000000,699
+2,Laptop X,Electronics,3000000,999
+3,Headphones Z,Electronics,4500000,199
+4,Smartwatch Y,Electronics,3200000,249
+5,Tablet T,Electronics,2800000,399
+6,Shirt Blue,Clothing,5100000,49
+7,Shoes Black,Clothing,3700000,89
+8,Jeans Grey,Clothing,3300000,59
+9,Coffee Maker,Home Appliances,5000000,79
+10,Vacuum Cleaner,Home Appliances,2400000,199
+11,Refrigerator R,Home Appliances,1000000,999
+12,Blender X,Home Appliances,2200000,129

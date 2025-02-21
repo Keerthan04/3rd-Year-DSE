@@ -1,0 +1,6 @@
+Calls.txt, customers.txt
+1. put both to hdfs, load both with suitable scheme into pig
+2. find all premium plan customers
+3. find average call duration for each plan type
+4. inner join on cutomerid, callerid collumns and display in certain format
+5. find city with highest total call duration

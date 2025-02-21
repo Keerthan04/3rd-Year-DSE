@@ -1,0 +1,7 @@
+101,Amit,Bangalore,Premium
+102,Neha,Delhi,Standard
+103,Raj,Mumbai,Premium
+104,Kiran,Chennai,Basic
+105,Sara,Kolkata,Standard
+106,Ravi,Bangalore,Premium
+107,Anu,Delhi,Basic
