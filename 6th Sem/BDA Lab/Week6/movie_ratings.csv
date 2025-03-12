@@ -1,0 +1,7 @@
+movie_id,title,genre,release_year,user_id,rating,timestamp
+101,The Dark Knight,Action,2008,5001,9.0,2024-01-01 12:30:00
+102,Inception,Sci-Fi,2010,5002,8.8,2024-01-01 14:00:00
+103,Parasite,Thriller,2019,5003,8.6,2024-01-02 16:45:00
+104,Interstellar,Sci-Fi,2014,5004,8.6,2024-01-03 10:30:00
+105,Avengers: Endgame,Action,2019,5005,8.4,2024-01-04 09:00:00
+106,Spirited Away,Animation,2001,5006,8.6,2024-01-05 22:15:00

@@ -1,0 +1,79 @@
+create table flight(flight_id int,airline string,flight_number string,origin string,destination string,departure_date string,departure_time string,arrival_time string,delay_minutes int,status string) row format delimited fields terminated by ',' stored as textfile;
+
+alter table flight set tblproperties ("skip.header.line.count"="1");
+
+load data inpath '/user/220968002/lab6/flight_delays.csv' into table  flight;
+
+select * from flight;
+OK
+101      Delta   DL202   JFK     LAX    2024-02-01       08:30   11:30  10       On Time
+102	 United	 UA405	 ORD	 SFO	2024-02-01	 09:00	 12:00	45	 Delayed
+103	 American	 AA100	 LAX	 MIA	2024-02-02	 10:00	 14:00	0	 On Time
+104	 Southwest	 SW305	 DFW	 DEN	2024-02-02	 11:30	 13:30	30	 Delayed
+105	 JetBlue	 JB678	 BOS	 ATL	2024-02-03	 07:00	 09:30	5	 On Time
+
+SELECT airline, SUM(delay_minutes) AS total_delay
+    > FROM flight
+    > WHERE status = 'Delayed'
+    > GROUP BY airline
+    > ORDER BY total_delay DESC
+    > LIMIT 1;
+
+
+SELECT status, COUNT(*) AS flight_count
+    > FROM flight
+    > GROUP BY status;
+ Delayed	2
+ On Time	3
+
+ SELECT airline, AVG(delay_minutes) AS average_delay
+    > FROM flight
+    > WHERE status = 'Delayed'
+    > GROUP BY airline;
+
+REATE TABLE flight_partitioned (
+    >   flight_id INT,
+    >   airline STRING,
+    >   flight_number STRING,
+    >   origin STRING,
+    >   destination STRING,
+    >   departure_time STRING,
+    >   arrival_time STRING,
+    >   delay_minutes INT,
+    >   status STRING
+    > )
+    > PARTITIONED BY (departure_date STRING)
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > STORED AS TEXTFILE;
+
+INSERT INTO TABLE flight_partitioned
+    > PARTITION (departure_date)
+    > SELECT flight_id, airline, flight_number, origin, destination, departure_time, arrival_time, delay_minutes, status, departure_date
+    > FROM flight;
+    
+CREATE TABLE flight_bucketed (
+    >   flight_id INT,
+    >   airline STRING,
+    >   flight_number STRING,
+    >   origin STRING,
+    >   destination STRING,
+    >   departure_date STRING,
+    >   departure_time STRING,
+    >   arrival_time STRING,
+    >   delay_minutes INT,
+    >   status STRING
+    > )
+    > CLUSTERED BY (airline) INTO 5 BUCKETS
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > STORED AS TEXTFILE;
+
+INSERT INTO TABLE flight_bucketed
+    > SELECT flight_id, airline, flight_number, origin, destination, departure_date, departure_time, arrival_time, delay_minutes, status
+    > FROM flight;
+    
+SELECT * 
+    > FROM flight_bucketed
+    > WHERE airline = 'Delta';
+

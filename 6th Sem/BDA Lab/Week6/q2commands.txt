@@ -1,0 +1,90 @@
+CREATE TABLE movie (
+    >   movie_id INT,
+    >   title STRING,
+    >   genre STRING,
+    >   release_year INT,
+    >   user_id INT,
+    >   rating FLOAT,
+    >   `timestamp` STRING
+    > )
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > STORED AS TEXTFILE;
+//timestamp is reserved keyword so shd use like this
+
+alter table movie set tblproperties ("skip.header.line.count"="1");
+
+load data inpath '/user/220968002/lab6/movie_ratings.csv' into table movie;
+
+select * from movie;
+OK
+101	The Dark Knight	Action	2008	5001	9.0	2024-01-01 12:30:00
+102	Inception	Sci-Fi	2010	5002	8.8	2024-01-01 14:00:00
+103	Parasite	Thriller	2019	5003	8.6	2024-01-02 16:45:00
+104	Interstellar	Sci-Fi	2014	5004	8.6	2024-01-03 10:30:00
+105	Avengers: Endgame	Action	2019	5005	8.4	2024-01-04 09:00:00
+106	Spirited Away	Animation	2001	5006	8.6	2024-01-05 22:15:00
+
+select * from movie order by rating desc;
+101	The Dark Knight	Action	2008	5001	9.0	2024-01-01 12:30:00
+102	Inception	Sci-Fi	2010	5002	8.8	2024-01-01 14:00:00
+106	Spirited Away	Animation	2001	5006	8.6	2024-01-05 22:15:00
+104	Interstellar	Sci-Fi	2014	5004	8.6	2024-01-03 10:30:00
+103	Parasite	Thriller	2019	5003	8.6	2024-01-02 16:45:00
+105	Avengers: Endgame	Action	2019	5005	8.4	2024-01-04 09:00:00
+
+
+select genre,SUM(rating) as total_rating from movie group by genre order by total_rating desc limit 1;
+Sci-Fi	17.40000057220459
+
+SELECT 
+    >   YEAR(`timestamp`) AS review_year,
+    >   COUNT(*) AS review_count
+    > FROM 
+    >   movie
+    > GROUP BY 
+    >   YEAR(`timestamp`)
+    > ORDER BY 
+    >   review_year;
+2024	6
+
+
+create table movie_partitioned(movie_id int,title string,release_year int,user_id int,rating float, `timestamp` string) partitioned by (genre string) stored as textfile;
+
+insert into movie_partitioned partition(genre) select movie_id,title,release_year,user_id,rating,`timestamp`,genre from movie;
+//when insering the column of partition always at last else all taken as null then
+
+select * from movie_partitioned where genre='Sci-Fi';
+102	Inception	2010	5002	8.8	2024-01-01 14:00:00	Sci-Fi
+104	Interstellar	2014	5004	8.6	2024-01-03 10:30:00	Sci-Fi
+
+CREATE TABLE movie_bucketed (
+    >   movie_id INT,
+    >   title STRING,
+    >   genre STRING,
+    >   release_year INT,
+    >   user_id INT,
+    >   rating FLOAT,
+    >   `timestamp` STRING
+    > )
+    > CLUSTERED BY (release_year) INTO 10 BUCKETS
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > STORED AS TEXTFILE;
+    
+insert overwrite table movie_bucketed select * from movie sort by release_year;
+
+SELECT 
+    >   movie_id, 
+    >   title, 
+    >   rating 
+    > FROM 
+    >   movie_bucketed
+    > WHERE 
+    >   release_year = 2019;
+105	Avengers: Endgame	8.4
+103	Parasite	8.6
+
+
+
+
