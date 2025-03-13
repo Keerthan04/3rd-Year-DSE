@@ -1,0 +1,412 @@
+to view all the tables created can use => list command
+
+1-> 
+create 'students','personal','academic'
+
+Created table students
+Took 1.1643 seconds
+=> Hbase::Table - students
+
+hbase:002:0> create 'employees','details','salary'
+
+Created table employees
+Took 0.6473 seconds
+=> Hbase::Table - employees
+
+hbase:003:0> create 'orders','customer','items','payement'
+
+Created table orders
+Took 0.6437 seconds
+
+2-> describe 'students'
+
+Table students is ENABLED
+students, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'academic', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOP
+E => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'personal', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOP
+E => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+2 row(s)
+Quota is disabled
+Took 0.1529 seconds
+
+hbase:005:0> describe 'employees'
+
+Table employees is ENABLED
+employees, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'details', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE
+ => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'salary', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE 
+=> '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+2 row(s)
+Quota is disabled
+Took 0.0579 seconds
+
+describe 'orders'
+
+Table orders is ENABLED
+orders, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'customer', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOP
+E => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'items', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE =
+> '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'payement', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOP
+E => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+3 row(s)
+Quota is disabled
+Took 0.0478 seconds
+
+3->
+disable 'orders'
+Took 0.3605 seconds
+
+hbase:009:0> is_disabled 'orders'
+true
+Took 0.0179 seconds
+=> true
+
+hbase:011:0> drop 'orders'
+Took 0.1734 seconds
+
+hbase:012:0> create 'orders','customer','items','payment'
+
+Created table orders
+Took 0.6419 seconds
+=> Hbase::Table - orders
+
+hbase:013:0> describe 'orders'
+
+Table orders is ENABLED
+orders, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'customer', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOP
+E => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'items', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE =
+> '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+{NAME => 'payment', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE
+ => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+3 row(s)
+Quota is disabled
+Took 0.0445 seconds
+
+4->
+put 'students', '1', 'personal:name', 'Alice'
+put 'students', '1', 'personal:age', '21'
+put 'students', '1', 'academic:marks', '85'
+put 'students', '1', 'academic:grade', 'A'
+
+put 'students', '2', 'personal:name', 'Bob'
+put 'students', '2', 'personal:age', '22'
+put 'students', '2', 'academic:marks', '78'
+put 'students', '2', 'academic:grade', 'B'
+
+put 'students', '3', 'personal:name', 'Charlie'
+put 'students', '3', 'personal:age', '23'
+put 'students', '3', 'academic:marks', '90'
+put 'students', '3', 'academic:grade', 'A+'
+
+put 'students', '4', 'personal:name', 'David'
+put 'students', '4', 'personal:age', '20'
+put 'students', '4', 'academic:marks', '67'
+put 'students', '4', 'academic:grade', 'C'
+
+hbase:037:0> scan 'students'
+ROW                                             COLUMN+CELL
+ 1                                              column=academic:grade, timestamp=2025-03-13T05:49:42.338, value=A
+ 1                                              column=academic:marks, timestamp=2025-03-13T05:49:42.314, value=85
+ 1                                              column=personal:age, timestamp=2025-03-13T05:49:42.277, value=21
+ 1                                              column=personal:name, timestamp=2025-03-13T05:49:42.258, value=Alice
+ 2                                              column=academic:grade, timestamp=2025-03-13T05:49:42.423, value=B
+ 2                                              column=academic:marks, timestamp=2025-03-13T05:49:42.404, value=78
+ 2                                              column=personal:age, timestamp=2025-03-13T05:49:42.376, value=22
+ 2                                              column=personal:name, timestamp=2025-03-13T05:49:42.359, value=Bob
+ 3                                              column=academic:grade, timestamp=2025-03-13T05:49:42.490, value=A+
+ 3                                              column=academic:marks, timestamp=2025-03-13T05:49:42.473, value=90
+ 3                                              column=personal:age, timestamp=2025-03-13T05:49:42.461, value=23
+ 3                                              column=personal:name, timestamp=2025-03-13T05:49:42.446, value=Charlie
+ 4                                              column=academic:grade, timestamp=2025-03-13T05:49:42.560, value=C
+ 4                                              column=academic:marks, timestamp=2025-03-13T05:49:42.547, value=67
+ 4                                              column=personal:age, timestamp=2025-03-13T05:49:42.529, value=20
+ 4                                              column=personal:name, timestamp=2025-03-13T05:49:42.510, value=David
+4 row(s)
+Took 0.0418 seconds
+
+
+hbase:038:0> put 'employees', 'E101', 'details:name', 'John'
+Took 0.0163 seconds
+hbase:039:0> put 'employees', 'E101', 'details:age', '30'
+Took 0.0062 seconds
+hbase:040:0> put 'employees', 'E101', 'details:department', 'HR'
+Took 0.0054 seconds
+hbase:041:0> put 'employees', 'E101', 'salary:basic_pay', '50000'
+Took 0.0046 seconds
+hbase:042:0> put 'employees', 'E101', 'salary:bonus', '5000'
+Took 0.0039 seconds
+hbase:043:0>
+hbase:044:0> put 'employees', 'E102', 'details:name', 'Mike'
+Took 0.0042 seconds
+hbase:045:0> put 'employees', 'E102', 'details:age', '28'
+Took 0.0046 seconds
+hbase:046:0> put 'employees', 'E102', 'details:department', 'Finance'
+Took 0.0042 seconds
+hbase:047:0> put 'employees', 'E102', 'salary:basic_pay', '60000'
+Took 0.0039 seconds
+hbase:048:0> put 'employees', 'E102', 'salary:bonus', '7000'
+Took 0.0040 seconds
+hbase:049:0>
+hbase:050:0> put 'employees', 'E103', 'details:name', 'Sophia'
+Took 0.0046 seconds
+hbase:051:0> put 'employees', 'E103', 'details:age', '35'
+Took 0.0031 seconds
+hbase:052:0> put 'employees', 'E103', 'details:department', 'IT'
+Took 0.0028 seconds
+hbase:053:0> put 'employees', 'E103', 'salary:basic_pay', '75000'
+Took 0.0039 seconds
+hbase:054:0> put 'employees', 'E103', 'salary:bonus', '10000'
+Took 0.0033 seconds
+hbase:055:0>
+hbase:056:0> put 'employees', 'E104', 'details:name', 'Emma'
+Took 0.0035 seconds
+hbase:057:0> put 'employees', 'E104', 'details:age', '29'
+Took 0.0038 seconds
+hbase:058:0> put 'employees', 'E104', 'details:department', 'Marketing'
+Took 0.0031 seconds
+hbase:059:0> put 'employees', 'E104', 'salary:basic_pay', '55000'
+Took 0.0039 seconds
+hbase:060:0> put 'employees', 'E104', 'salary:bonus', '6000'
+Took 0.0040 seconds
+hbase:061:0> scan 'employees'
+ROW                                             COLUMN+CELL
+ E101                                           column=details:age, timestamp=2025-03-13T05:51:12.671, value=30
+ E101                                           column=details:department, timestamp=2025-03-13T05:51:12.690, value=HR
+ E101                                           column=details:name, timestamp=2025-03-13T05:51:12.651, value=John
+ E101                                           column=salary:basic_pay, timestamp=2025-03-13T05:51:12.709, value=50000
+ E101                                           column=salary:bonus, timestamp=2025-03-13T05:51:12.727, value=5000
+ E102                                           column=details:age, timestamp=2025-03-13T05:51:12.763, value=28
+ E102                                           column=details:department, timestamp=2025-03-13T05:51:12.781, value=Finance
+ E102                                           column=details:name, timestamp=2025-03-13T05:51:12.747, value=Mike
+ E102                                           column=salary:basic_pay, timestamp=2025-03-13T05:51:12.801, value=60000
+ E102                                           column=salary:bonus, timestamp=2025-03-13T05:51:12.814, value=7000
+ E103                                           column=details:age, timestamp=2025-03-13T05:51:12.858, value=35
+ E103                                           column=details:department, timestamp=2025-03-13T05:51:12.870, value=IT
+ E103                                           column=details:name, timestamp=2025-03-13T05:51:12.842, value=Sophia
+ E103                                           column=salary:basic_pay, timestamp=2025-03-13T05:51:12.893, value=75000
+ E103                                           column=salary:bonus, timestamp=2025-03-13T05:51:12.911, value=10000
+ E104                                           column=details:age, timestamp=2025-03-13T05:51:12.943, value=29
+ E104                                           column=details:department, timestamp=2025-03-13T05:51:12.955, value=Marketing
+ E104                                           column=details:name, timestamp=2025-03-13T05:51:12.932, value=Emma
+ E104                                           column=salary:basic_pay, timestamp=2025-03-13T05:51:12.967, value=55000
+ E104                                           column=salary:bonus, timestamp=2025-03-13T05:51:12.985, value=6000
+4 row(s)
+Took 0.0525 seconds
+
+hbase:062:0> put 'orders', '1001', 'customer:name', 'Chris'
+Took 0.0102 seconds
+hbase:063:0> put 'orders', '1001', 'customer:email', 'chris@example.com'
+Took 0.0042 seconds
+hbase:064:0> put 'orders', '1001', 'items:product', 'Laptop'
+Took 0.0038 seconds
+hbase:065:0> put 'orders', '1001', 'items:quantity', '1'
+Took 0.0028 seconds
+hbase:066:0> put 'orders', '1001', 'payment:mode', 'Credit Card'
+Took 0.0040 seconds
+hbase:067:0> put 'orders', '1001', 'payment:amount', '1200'
+Took 0.0034 seconds
+hbase:068:0>
+hbase:069:0> put 'orders', '1002', 'customer:name', 'Sarah'
+Took 0.0026 seconds
+hbase:070:0> put 'orders', '1002', 'customer:email', 'sarah@example.com'
+Took 0.0039 seconds
+hbase:071:0> put 'orders', '1002', 'items:product', 'Phone'
+Took 0.0032 seconds
+hbase:072:0> put 'orders', '1002', 'items:quantity', '2'
+Took 0.0030 seconds
+hbase:073:0> put 'orders', '1002', 'payment:mode', 'UPI'
+Took 0.0025 seconds
+hbase:074:0> put 'orders', '1002', 'payment:amount', '1600'
+Took 0.0028 seconds
+hbase:075:0>
+hbase:076:0> put 'orders', '1003', 'customer:name', 'Tom'
+Took 0.0028 seconds
+hbase:077:0> put 'orders', '1003', 'customer:email', 'tom@example.com'
+Took 0.0023 seconds
+hbase:078:0> put 'orders', '1003', 'items:product', 'Tablet'
+Took 0.0029 seconds
+hbase:079:0> put 'orders', '1003', 'items:quantity', '1'
+Took 0.0056 seconds
+hbase:080:0> put 'orders', '1003', 'payment:mode', 'Debit Card'
+Took 0.0023 seconds
+hbase:081:0> put 'orders', '1003', 'payment:amount', '800'
+Took 0.0028 seconds
+hbase:082:0>
+hbase:083:0> put 'orders', '1004', 'customer:name', 'Lucy'
+Took 0.0033 seconds
+hbase:084:0> put 'orders', '1004', 'customer:email', 'lucy@example.com'
+Took 0.0025 seconds
+hbase:085:0> put 'orders', '1004', 'items:product', 'Monitor'
+Took 0.0023 seconds
+hbase:086:0> put 'orders', '1004', 'items:quantity', '2'
+Took 0.0020 seconds
+hbase:087:0> put 'orders', '1004', 'payment:mode', 'Net Banking'
+Took 0.0022 seconds
+hbase:088:0> put 'orders', '1004', 'payment:amount', '500'
+Took 0.0025 seconds
+hbase:089:0> scan 'orders'
+ROW                                             COLUMN+CELL
+ 1001                                           column=customer:email, timestamp=2025-03-13T05:51:54.274, value=chris@example.com
+ 1001                                           column=customer:name, timestamp=2025-03-13T05:51:54.251, value=Chris
+ 1001                                           column=items:product, timestamp=2025-03-13T05:51:54.289, value=Laptop
+ 1001                                           column=items:quantity, timestamp=2025-03-13T05:51:54.301, value=1
+ 1001                                           column=payment:amount, timestamp=2025-03-13T05:51:54.331, value=1200
+ 1001                                           column=payment:mode, timestamp=2025-03-13T05:51:54.317, value=Credit Card
+ 1002                                           column=customer:email, timestamp=2025-03-13T05:51:54.364, value=sarah@example.com
+ 1002                                           column=customer:name, timestamp=2025-03-13T05:51:54.350, value=Sarah
+ 1002                                           column=items:product, timestamp=2025-03-13T05:51:54.375, value=Phone
+ 1002                                           column=items:quantity, timestamp=2025-03-13T05:51:54.386, value=2
+ 1002                                           column=payment:amount, timestamp=2025-03-13T05:51:54.405, value=1600
+ 1002                                           column=payment:mode, timestamp=2025-03-13T05:51:54.396, value=UPI
+ 1003                                           column=customer:email, timestamp=2025-03-13T05:51:54.429, value=tom@example.com
+ 1003                                           column=customer:name, timestamp=2025-03-13T05:51:54.419, value=Tom
+ 1003                                           column=items:product, timestamp=2025-03-13T05:51:54.439, value=Tablet
+ 1003                                           column=items:quantity, timestamp=2025-03-13T05:51:54.457, value=1
+ 1003                                           column=payment:amount, timestamp=2025-03-13T05:51:54.477, value=800
+ 1003                                           column=payment:mode, timestamp=2025-03-13T05:51:54.468, value=Debit Card
+ 1004                                           column=customer:email, timestamp=2025-03-13T05:51:54.503, value=lucy@example.com
+ 1004                                           column=customer:name, timestamp=2025-03-13T05:51:54.492, value=Lucy
+ 1004                                           column=items:product, timestamp=2025-03-13T05:51:54.512, value=Monitor
+ 1004                                           column=items:quantity, timestamp=2025-03-13T05:51:54.521, value=2
+ 1004                                           column=payment:amount, timestamp=2025-03-13T05:51:54.539, value=500
+ 1004                                           column=payment:mode, timestamp=2025-03-13T05:51:54.530, value=Net Banking
+4 row(s)
+Took 0.0735 seconds
+
+5->(to retrive columns use columns)
+scan 'students',{COLUMNS => ['personal:name','academic:marks']}
+ROW                                             COLUMN+CELL
+ 1                                              column=academic:marks, timestamp=2025-03-13T05:49:42.314, value=85
+ 1                                              column=personal:name, timestamp=2025-03-13T05:49:42.258, value=Alice
+ 2                                              column=academic:marks, timestamp=2025-03-13T05:49:42.404, value=78
+ 2                                              column=personal:name, timestamp=2025-03-13T05:49:42.359, value=Bob
+ 3                                              column=academic:marks, timestamp=2025-03-13T05:49:42.473, value=90
+ 3                                              column=personal:name, timestamp=2025-03-13T05:49:42.446, value=Charlie
+ 4                                              column=academic:marks, timestamp=2025-03-13T05:49:42.547, value=67
+ 4                                              column=personal:name, timestamp=2025-03-13T05:49:42.510, value=David
+4 row(s)
+Took 0.0295 seconds
+
+6->(normal one works well sometimes as string stored numeric comparision problem so then change insertion with numerics like(put 'employees', 'E102', 'salary:basic_pay', 60000))
+
+if with columns then 
+scan 'employees', { COLUMNS => ['details:name', 'salary:basic_pay'], FILTER => "SingleColumnValueFilter('salary', 'basic_pay', >, 'binary:55000')" }
+
+else
+scan 'employees', { FILTER => "SingleColumnValueFilter('salary', 'basic_pay', >, 'binary:55000')" }
+ROW                                             COLUMN+CELL
+ E102                                           column=details:age, timestamp=2025-03-13T06:06:00.264, value=28
+ E102                                           column=details:department, timestamp=2025-03-13T06:06:00.274, value=Finance
+ E102                                           column=details:name, timestamp=2025-03-13T06:06:00.251, value=Mike
+ E102                                           column=salary:basic_pay, timestamp=2025-03-13T06:06:00.284, value=60000
+ E102                                           column=salary:bonus, timestamp=2025-03-13T06:06:00.296, value=7000
+ E103                                           column=details:age, timestamp=2025-03-13T06:06:00.322, value=35
+ E103                                           column=details:department, timestamp=2025-03-13T06:06:00.332, value=IT
+ E103                                           column=details:name, timestamp=2025-03-13T06:06:00.313, value=Sophia
+ E103                                           column=salary:basic_pay, timestamp=2025-03-13T06:06:00.343, value=75000
+ E103                                           column=salary:bonus, timestamp=2025-03-13T06:06:00.352, value=10000
+2 row(s)
+Took 0.0268 seconds
+
+7->(Since HBase stores row keys in lexicographical order, you can use the PageFilter to retrieve only the top 3 orders sorted by OrderID)
+
+scan 'orders',{FILTER => "PageFilter(3)"}
+ROW                                             COLUMN+CELL
+ 1001                                           column=customer:email, timestamp=2025-03-13T05:51:54.274, value=chris@example.com
+ 1001                                           column=customer:name, timestamp=2025-03-13T05:51:54.251, value=Chris
+ 1001                                           column=items:product, timestamp=2025-03-13T05:51:54.289, value=Laptop
+ 1001                                           column=items:quantity, timestamp=2025-03-13T05:51:54.301, value=1
+ 1001                                           column=payment:amount, timestamp=2025-03-13T05:51:54.331, value=1200
+ 1001                                           column=payment:mode, timestamp=2025-03-13T05:51:54.317, value=Credit Card
+ 1002                                           column=customer:email, timestamp=2025-03-13T05:51:54.364, value=sarah@example.com
+ 1002                                           column=customer:name, timestamp=2025-03-13T05:51:54.350, value=Sarah
+ 1002                                           column=items:product, timestamp=2025-03-13T05:51:54.375, value=Phone
+ 1002                                           column=items:quantity, timestamp=2025-03-13T05:51:54.386, value=2
+ 1002                                           column=payment:amount, timestamp=2025-03-13T05:51:54.405, value=1600
+ 1002                                           column=payment:mode, timestamp=2025-03-13T05:51:54.396, value=UPI
+ 1003                                           column=customer:email, timestamp=2025-03-13T05:51:54.429, value=tom@example.com
+ 1003                                           column=customer:name, timestamp=2025-03-13T05:51:54.419, value=Tom
+ 1003                                           column=items:product, timestamp=2025-03-13T05:51:54.439, value=Tablet
+ 1003                                           column=items:quantity, timestamp=2025-03-13T05:51:54.457, value=1
+ 1003                                           column=payment:amount, timestamp=2025-03-13T05:51:54.477, value=800
+ 1003                                           column=payment:mode, timestamp=2025-03-13T05:51:54.468, value=Debit Card
+
+8->
+scan 'students',{FILTER => "SingleColumnValueFilter('academic','marks',>,'binary:80')"}
+ROW                                             COLUMN+CELL
+ 1                                              column=academic:grade, timestamp=2025-03-13T05:49:42.338, value=A
+ 1                                              column=academic:marks, timestamp=2025-03-13T05:49:42.314, value=85
+ 1                                              column=personal:age, timestamp=2025-03-13T05:49:42.277, value=21
+ 1                                              column=personal:name, timestamp=2025-03-13T05:49:42.258, value=Alice
+ 3                                              column=academic:grade, timestamp=2025-03-13T05:49:42.490, value=A+
+ 3                                              column=academic:marks, timestamp=2025-03-13T05:49:42.473, value=90
+ 3                                              column=personal:age, timestamp=2025-03-13T05:49:42.461, value=23
+ 3                                              column=personal:name, timestamp=2025-03-13T05:49:42.446, value=Charlie
+2 row(s)
+Took 0.0217 seconds
+
+9->(if string also use binary(as hbase stores as byte and all or some reason) and for equal its just = not ==)
+
+scan 'employees', { FILTER => "SingleColumnValueFilter('details', 'department', =, 'binary:IT')" }
+ROW                                             COLUMN+CELL
+ E103                                           column=details:age, timestamp=2025-03-13T06:06:00.322, value=35
+ E103                                           column=details:department, timestamp=2025-03-13T06:06:00.332, value=IT
+ E103                                           column=details:name, timestamp=2025-03-13T06:06:00.313, value=Sophia
+ E103                                           column=salary:basic_pay, timestamp=2025-03-13T06:06:00.343, value=75000
+ E103                                           column=salary:bonus, timestamp=2025-03-13T06:06:00.352, value=10000
+1 row(s)
+Took 0.0300 seconds
+
+10->
+scan 'orders', { FILTER => "SingleColumnValueFilter('payment', 'mode', =, 'binary:Credit Card')" }
+ROW                                             COLUMN+CELL
+ 1001                                           column=customer:email, timestamp=2025-03-13T05:51:54.274, value=chris@example.com
+ 1001                                           column=customer:name, timestamp=2025-03-13T05:51:54.251, value=Chris
+ 1001                                           column=items:product, timestamp=2025-03-13T05:51:54.289, value=Laptop
+ 1001                                           column=items:quantity, timestamp=2025-03-13T05:51:54.301, value=1
+ 1001                                           column=payment:amount, timestamp=2025-03-13T05:51:54.331, value=1200
+ 1001                                           column=payment:mode, timestamp=2025-03-13T05:51:54.317, value=Credit Card
+1 row(s)
+Took 0.0059 seconds
+
+11->(can use count for counting the rows)
+
+count 'employees'
+4 row(s)
+Took 0.0213 seconds
+=> 4
+
+12->(only normal we can and manual check,cant sort and all for that extra mapreduce and all ig shd be used)
+
+scan 'students', { COLUMNS => ['personal:name', 'personal:age'] }
+ROW                                             COLUMN+CELL
+ 1                                              column=personal:age, timestamp=2025-03-13T05:49:42.277, value=21
+ 1                                              column=personal:name, timestamp=2025-03-13T05:49:42.258, value=Alice
+ 2                                              column=personal:age, timestamp=2025-03-13T05:49:42.376, value=22
+ 2                                              column=personal:name, timestamp=2025-03-13T05:49:42.359, value=Bob
+ 3                                              column=personal:age, timestamp=2025-03-13T05:49:42.461, value=23
+ 3                                              column=personal:name, timestamp=2025-03-13T05:49:42.446, value=Charlie
+ 4                                              column=personal:age, timestamp=2025-03-13T05:49:42.529, value=20
+ 4                                              column=personal:name, timestamp=2025-03-13T05:49:42.510, value=David
+4 row(s)
+Took 0.0130 seconds

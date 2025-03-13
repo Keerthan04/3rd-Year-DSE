@@ -1,0 +1,106 @@
+1->
+create 'library','book_info','availability'
+Created table library
+Took 0.6447 seconds
+=> Hbase::Table - library
+
+2->
+hbase:139:0> put 'library', 'B001', 'availability:status', 'Available'
+Took 0.0036 seconds
+hbase:140:0> put 'library', 'B001', 'availability:borrower', ''
+Took 0.0030 seconds
+hbase:141:0>
+hbase:142:0> put 'library', 'B002', 'book_info:title', '1984'
+Took 0.0026 seconds
+hbase:143:0> put 'library', 'B002', 'book_info:author', 'George Orwell'
+Took 0.0029 seconds
+hbase:144:0> put 'library', 'B002', 'book_info:genre', 'Dystopian'
+Took 0.0026 seconds
+hbase:145:0> put 'library', 'B002', 'availability:status', 'Borrowed'
+Took 0.0020 seconds
+hbase:146:0> put 'library', 'B002', 'availability:borrower', 'Alice'
+Took 0.0025 seconds
+hbase:147:0>
+hbase:148:0> put 'library', 'B003', 'book_info:title', 'To Kill a Mockingbird'
+Took 0.0030 seconds
+hbase:149:0> put 'library', 'B003', 'book_info:author', 'Harper Lee'
+Took 0.0023 seconds
+hbase:150:0> put 'library', 'B003', 'book_info:genre', 'Classic'
+Took 0.0029 seconds
+hbase:151:0> put 'library', 'B003', 'availability:status', 'Available'
+Took 0.0025 seconds
+hbase:152:0> put 'library', 'B003', 'availability:borrower', ''
+Took 0.0026 seconds
+hbase:153:0>
+hbase:154:0> put 'library', 'B004', 'book_info:title', 'The Catcher in the Rye'
+Took 0.0028 seconds
+hbase:155:0> put 'library', 'B004', 'book_info:author', 'J.D. Salinger'
+Took 0.0023 seconds
+hbase:156:0> put 'library', 'B004', 'book_info:genre', 'Fiction'
+Took 0.0026 seconds
+hbase:157:0> put 'library', 'B004', 'availability:status', 'Borrowed'
+Took 0.0028 seconds
+hbase:158:0> put 'library', 'B004', 'availability:borrower', 'John'
+Took 0.0029 seconds
+hbase:159:0> scan 'library'
+ROW                                             COLUMN+CELL
+ B001                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.598, value=
+ B001                                           column=availability:status, timestamp=2025-03-13T06:29:28.585, value=Available
+ B001                                           column=book_info:author, timestamp=2025-03-13T06:29:28.562, value=F. Scott Fitzgerald
+ B001                                           column=book_info:title, timestamp=2025-03-13T06:29:28.538, value=The Great Gatsby
+ B002                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.655, value=Alice
+ B002                                           column=availability:status, timestamp=2025-03-13T06:29:28.646, value=Borrowed
+ B002                                           column=book_info:author, timestamp=2025-03-13T06:29:28.627, value=George Orwell
+ B002                                           column=book_info:genre, timestamp=2025-03-13T06:29:28.637, value=Dystopian
+ B002                                           column=book_info:title, timestamp=2025-03-13T06:29:28.617, value=1984
+ B003                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.713, value=
+ B003                                           column=availability:status, timestamp=2025-03-13T06:29:28.701, value=Available
+ B003                                           column=book_info:author, timestamp=2025-03-13T06:29:28.681, value=Harper Lee
+ B003                                           column=book_info:genre, timestamp=2025-03-13T06:29:28.690, value=Classic
+ B003                                           column=book_info:title, timestamp=2025-03-13T06:29:28.670, value=To Kill a Mockingbird
+ B004                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.771, value=John
+ B004                                           column=availability:status, timestamp=2025-03-13T06:29:28.761, value=Borrowed
+ B004                                           column=book_info:author, timestamp=2025-03-13T06:29:28.741, value=J.D. Salinger
+ B004                                           column=book_info:genre, timestamp=2025-03-13T06:29:28.750, value=Fiction
+ B004                                           column=book_info:title, timestamp=2025-03-13T06:29:28.730, value=The Catcher in the Rye
+4 row(s)
+Took 0.0370 seconds
+
+3->
+ get 'library','B002'
+COLUMN                                          CELL
+ availability:borrower                          timestamp=2025-03-13T06:29:28.655, value=Alice
+ availability:status                            timestamp=2025-03-13T06:29:28.646, value=Borrowed
+ book_info:author                               timestamp=2025-03-13T06:29:28.627, value=George Orwell
+ book_info:genre                                timestamp=2025-03-13T06:29:28.637, value=Dystopian
+ book_info:title                                timestamp=2025-03-13T06:29:28.617, value=1984
+1 row(s)
+Took 0.0247 seconds
+
+4->
+scan 'library',{FILTER=>"SingleColumnValueFilter('availability','status',=,'binary:Available')"}
+ROW                                             COLUMN+CELL
+ B001                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.598, value=
+ B001                                           column=availability:status, timestamp=2025-03-13T06:29:28.585, value=Available
+ B001                                           column=book_info:author, timestamp=2025-03-13T06:29:28.562, value=F. Scott Fitzgerald
+ B001                                           column=book_info:title, timestamp=2025-03-13T06:29:28.538, value=The Great Gatsby
+ B003                                           column=availability:borrower, timestamp=2025-03-13T06:29:28.713, value=
+ B003                                           column=availability:status, timestamp=2025-03-13T06:29:28.701, value=Available
+ B003                                           column=book_info:author, timestamp=2025-03-13T06:29:28.681, value=Harper Lee
+ B003                                           column=book_info:genre, timestamp=2025-03-13T06:29:28.690, value=Classic
+ B003                                           column=book_info:title, timestamp=2025-03-13T06:29:28.670, value=To Kill a Mockingbird
+2 row(s)
+Took 0.0191 seconds
+
+5->(updating is just adding new data to that column)
+
+put 'library', 'B003', 'availability:status', 'Borrowed'
+Took 0.0064 seconds
+hbase:163:0> put 'library', 'B003', 'availability:borrower', 'Michael'
+Took 0.0040 seconds
+
+6->
+count 'library'
+4 row(s)
+Took 0.0103 seconds
+=> 4

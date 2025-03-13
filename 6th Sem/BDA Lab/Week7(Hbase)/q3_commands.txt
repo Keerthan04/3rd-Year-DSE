@@ -1,0 +1,124 @@
+1->
+create 'transactions', 'customer_info', 'transaction_details'
+Created table transactions
+Took 0.6297 seconds
+=> Hbase::Table - transactions
+
+2->
+hbase:194:0> put 'transactions', 'T001', 'customer_info:name', 'Alice'
+Took 0.0100 seconds
+hbase:195:0> put 'transactions', 'T001', 'customer_info:email', 'alice@example.com'
+Took 0.0025 seconds
+hbase:196:0> put 'transactions', 'T001', 'transaction_details:amount', '2500'
+Took 0.0040 seconds
+hbase:197:0> put 'transactions', 'T001', 'transaction_details:mode', 'Credit Card'
+Took 0.0027 seconds
+hbase:198:0> put 'transactions', 'T001', 'transaction_details:date', '2025-03-10'
+Took 0.0028 seconds
+hbase:199:0>
+hbase:200:0> put 'transactions', 'T002', 'customer_info:name', 'Bob'
+Took 0.0019 seconds
+hbase:201:0> put 'transactions', 'T002', 'customer_info:email', 'bob@example.com'
+Took 0.0030 seconds
+hbase:202:0> put 'transactions', 'T002', 'transaction_details:amount', '4000'
+Took 0.0029 seconds
+hbase:203:0> put 'transactions', 'T002', 'transaction_details:mode', 'Debit Card'
+Took 0.0020 seconds
+hbase:204:0> put 'transactions', 'T002', 'transaction_details:date', '2025-03-11'
+Took 0.0028 seconds
+hbase:205:0>
+hbase:206:0> put 'transactions', 'T003', 'customer_info:name', 'Charlie'
+Took 0.0032 seconds
+hbase:207:0> put 'transactions', 'T003', 'customer_info:email', 'charlie@example.com'
+Took 0.0023 seconds
+hbase:208:0> put 'transactions', 'T003', 'transaction_details:amount', '5000'
+Took 0.0025 seconds
+hbase:209:0> put 'transactions', 'T003', 'transaction_details:mode', 'Credit Card'
+Took 0.0025 seconds
+hbase:210:0> put 'transactions', 'T003', 'transaction_details:date', '2025-03-12'
+Took 0.0019 seconds
+hbase:211:0>
+hbase:212:0> put 'transactions', 'T004', 'customer_info:name', 'David'
+Took 0.0022 seconds
+hbase:213:0> put 'transactions', 'T004', 'customer_info:email', 'david@example.com'
+Took 0.0019 seconds
+hbase:214:0> put 'transactions', 'T004', 'transaction_details:amount', '1500'
+Took 0.0017 seconds
+hbase:215:0> put 'transactions', 'T004', 'transaction_details:mode', 'UPI'
+Took 0.0026 seconds
+hbase:216:0> put 'transactions', 'T004', 'transaction_details:date', '2025-03-13'
+Took 0.0020 seconds
+hbase:217:0> scan 'transactions'
+ROW                                             COLUMN+CELL
+ T001                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.360, value=alice@example.com
+ T001                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.345, value=Alice
+ T001                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.371, value=2500
+ T001                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.395, value=2025-03-10
+ T001                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.383, value=Credit Card
+ T002                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.419, value=bob@example.com
+ T002                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.409, value=Bob
+ T002                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.429, value=4000
+ T002                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.450, value=2025-03-11
+ T002                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.439, value=Debit Card
+ T003                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.475, value=charlie@example.com
+ T003                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.465, value=Charlie
+ T003                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.487, value=5000
+ T003                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.505, value=2025-03-12
+ T003                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.497, value=Credit Card
+ T004                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.526, value=david@example.com
+ T004                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.517, value=David
+ T004                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.534, value=1500
+ T004                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.559, value=2025-03-13
+ T004                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.541, value=UPI
+4 row(s)
+Took 0.0286 seconds
+
+3->
+scan 'transactions', { FILTER => "SingleColumnValueFilter('transaction_details', 'amount', >, 'binary:3000')" }
+ROW                                             COLUMN+CELL
+ T002                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.419, value=bob@example.com
+ T002                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.409, value=Bob
+ T002                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.429, value=4000
+ T002                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.450, value=2025-03-11
+ T002                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.439, value=Debit Card
+ T003                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.475, value=charlie@example.com
+ T003                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.465, value=Charlie
+ T003                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.487, value=5000
+ T003                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.505, value=2025-03-12
+ T003                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.497, value=Credit Card
+2 row(s)
+Took 0.0124 seconds
+
+4->
+scan 'transactions', { FILTER => "SingleColumnValueFilter('transaction_details', 'mode', =, 'binary:Credit Card')" }
+ROW                                             COLUMN+CELL
+ T001                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.360, value=alice@example.com
+ T001                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.345, value=Alice
+ T001                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.371, value=2500
+ T001                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.395, value=2025-03-10
+ T001                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.383, value=Credit Card
+ T003                                           column=customer_info:email, timestamp=2025-03-13T06:44:10.475, value=charlie@example.com
+ T003                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.465, value=Charlie
+ T003                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.487, value=5000
+ T003                                           column=transaction_details:date, timestamp=2025-03-13T06:44:10.505, value=2025-03-12
+ T003                                           column=transaction_details:mode, timestamp=2025-03-13T06:44:10.497, value=Credit Card
+2 row(s)
+Took 0.0069 seconds
+
+5->
+ scan 'transactions', { COLUMNS => ['customer_info:name', 'transaction_details:amount'] }
+ROW                                             COLUMN+CELL
+ T001                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.345, value=Alice
+ T001                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.371, value=2500
+ T002                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.409, value=Bob
+ T002                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.429, value=4000
+ T003                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.465, value=Charlie
+ T003                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.487, value=5000
+ T004                                           column=customer_info:name, timestamp=2025-03-13T06:44:10.517, value=David
+ T004                                           column=transaction_details:amount, timestamp=2025-03-13T06:44:10.534, value=1500
+4 row(s)
+Took 0.0092 seconds
+
+6->(to delete all columns we need to use this delete all else (delete 'students', '1', 'contact:email' then only that column))
+
+deleteall 'transactions', 'T002'
