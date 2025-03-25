@@ -1,0 +1,10 @@
+Week 9
+MDP & MONTE CARLO METHODS
+Use the Cliff Walking Environment:
+https://www.gymlibrary.dev/environments/toy_text/cliff_walking/
+Learn the optimal policy using 500 episodes :
+1. Monte Carlo First Visit
+2. Monte Carlo Every Visit
+Comment and compare on the methods' performance in terms of the number of steps needed to learn optimal policy and the number of episodes.
+
+ 
