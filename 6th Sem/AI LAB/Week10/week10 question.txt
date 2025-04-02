@@ -1,0 +1,11 @@
+Week 10 
+Use the Cliff Walking Environment:
+https://www.gymlibrary.dev/environments/toy_text/cliff_walking/
+ 
+Learn the optimal policy using 500 episodes :
+Monte Carlo ES (Exploring Starts)
+On-policy first-visit MC control (for Ɛ-soft policies), for Ɛ = 0.1
+ 
+Compare and comment on both methods' performance in terms of the number of steps needed to learn optimal policy and the number of episodes .
+Cliff Walking - Gym Documentation
+ 

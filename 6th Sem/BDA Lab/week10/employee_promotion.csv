@@ -1,0 +1,1001 @@
+EmployeeID,Age,Department,Education,WorkExperience,PerformanceRating,Salary,TrainingHours,PromotionStatus
+1,34,HR,PhD,2,3,5530,82,0
+2,56,Operations,Master's,28,3,6333,50,1
+3,23,Sales,Bachelor's,13,4,10234,42,1
+4,34,HR,PhD,23,2,3511,65,0
+5,37,IT,Master's,25,5,17546,21,0
+6,39,Finance,Master's,28,1,8082,70,0
+7,28,Finance,Bachelor's,26,5,19636,76,0
+8,57,Finance,Master's,11,4,11820,40,0
+9,51,IT,Bachelor's,1,3,6476,78,0
+10,28,Sales,High School,24,3,12178,11,0
+11,36,Finance,PhD,2,2,4725,20,1
+12,40,Sales,Master's,17,4,16765,18,0
+13,58,HR,High School,8,5,4701,84,0
+14,23,Operations,Master's,2,4,11496,29,1
+15,34,Operations,Master's,6,4,15270,8,0
+16,52,Sales,High School,22,3,13472,33,0
+17,37,Sales,Master's,5,5,5807,60,0
+18,27,Operations,Master's,16,1,18654,10,0
+19,49,Finance,High School,8,3,14078,5,0
+20,53,Marketing,Master's,19,5,10572,43,0
+21,31,Marketing,Bachelor's,16,2,11698,5,0
+22,39,IT,Master's,13,3,7856,67,0
+23,25,Operations,PhD,26,2,9724,61,0
+24,30,Operations,Master's,20,3,12245,71,0
+25,28,IT,PhD,7,4,13866,69,0
+26,29,Marketing,PhD,16,5,13096,69,0
+27,28,HR,Master's,23,2,7587,25,0
+28,24,Finance,High School,16,3,7922,34,0
+29,38,Finance,Bachelor's,29,2,8046,37,0
+30,23,HR,Bachelor's,12,3,10203,52,0
+31,36,HR,Master's,14,3,18403,26,0
+32,50,Marketing,High School,24,1,12828,98,0
+33,43,IT,High School,18,1,18797,58,0
+34,25,HR,Bachelor's,27,1,3038,8,0
+35,27,IT,High School,28,2,9265,91,0
+36,59,Sales,Master's,18,4,9598,59,0
+37,47,Finance,Master's,16,3,5415,48,0
+38,32,Marketing,High School,20,5,17306,93,0
+39,47,Finance,Master's,16,1,17577,16,1
+40,38,Marketing,PhD,13,2,14885,85,0
+41,45,Sales,Bachelor's,26,2,14377,83,0
+42,49,Finance,Master's,29,2,14058,78,0
+43,56,Sales,High School,9,5,10443,56,0
+44,52,Marketing,Bachelor's,26,5,7383,97,0
+45,34,HR,Master's,28,1,4593,80,0
+46,56,Finance,Bachelor's,9,5,17758,69,0
+47,37,Sales,High School,13,1,10026,69,1
+48,36,Operations,PhD,29,5,5612,14,1
+49,39,Finance,PhD,4,5,14329,22,0
+50,58,Finance,Master's,9,5,4908,51,1
+51,48,Finance,PhD,15,1,9954,70,0
+52,56,IT,Master's,14,3,18185,53,0
+53,56,Sales,Bachelor's,19,1,18496,76,0
+54,49,Sales,Master's,12,3,5928,26,0
+55,59,Finance,Master's,21,2,12280,90,0
+56,30,HR,Master's,26,2,10681,30,0
+57,33,Finance,PhD,25,1,7127,94,0
+58,36,IT,Master's,6,3,7963,13,0
+59,42,Marketing,High School,3,3,14761,25,0
+60,56,IT,Master's,26,3,16554,99,0
+61,54,HR,Bachelor's,25,2,12357,67,0
+62,40,Finance,High School,22,1,3987,10,1
+63,44,Sales,Bachelor's,20,4,4965,18,0
+64,34,Operations,Bachelor's,16,3,10316,37,0
+65,22,Finance,Bachelor's,20,3,17046,75,1
+66,50,HR,High School,24,4,3868,28,0
+67,45,Sales,High School,23,1,7378,77,0
+68,37,IT,PhD,17,3,18463,79,0
+69,46,Marketing,High School,16,1,16246,91,0
+70,44,Marketing,Master's,6,3,4076,55,0
+71,49,Finance,Bachelor's,8,5,18169,6,0
+72,37,IT,PhD,19,3,9385,19,0
+73,59,Operations,High School,25,5,11222,39,0
+74,32,Operations,Bachelor's,26,1,8480,40,1
+75,24,HR,High School,2,3,10777,96,0
+76,36,Marketing,PhD,14,2,8362,43,1
+77,22,IT,High School,22,2,3950,8,1
+78,28,Finance,High School,12,4,11250,68,0
+79,22,Sales,Bachelor's,17,2,5818,78,0
+80,53,Finance,Master's,28,5,6600,10,0
+81,30,Finance,High School,27,2,14341,61,1
+82,50,IT,PhD,15,2,18053,34,0
+83,47,Marketing,High School,18,2,17333,78,0
+84,44,IT,High School,16,3,9255,71,0
+85,50,Sales,Master's,13,4,13907,94,0
+86,59,IT,Bachelor's,21,1,19007,19,1
+87,54,HR,PhD,17,4,17241,21,0
+88,28,Finance,Bachelor's,8,5,15090,95,1
+89,33,Marketing,Bachelor's,1,3,15305,22,0
+90,52,Operations,Bachelor's,29,3,16065,23,0
+91,53,Sales,High School,25,2,15647,80,1
+92,41,Operations,Master's,26,2,11523,92,0
+93,38,Finance,High School,27,5,9037,73,1
+94,57,IT,PhD,3,3,3527,28,0
+95,24,Operations,Master's,16,1,12290,95,0
+96,22,HR,Bachelor's,28,4,3211,52,0
+97,48,IT,Master's,2,3,13522,34,1
+98,54,Finance,PhD,15,1,18115,19,1
+99,41,Operations,High School,1,1,8149,51,0
+100,35,Sales,High School,9,4,12224,48,0
+101,57,Operations,Bachelor's,16,1,16621,31,0
+102,26,Operations,High School,4,5,9820,88,0
+103,44,Marketing,High School,12,1,17761,68,0
+104,36,Operations,PhD,1,5,13032,45,0
+105,27,Finance,Master's,1,1,17002,72,1
+106,54,Sales,High School,7,2,13330,9,0
+107,40,Finance,PhD,18,1,15743,57,0
+108,34,HR,PhD,23,5,19827,12,0
+109,50,IT,Bachelor's,28,1,12671,26,0
+110,27,Operations,PhD,23,1,14577,11,1
+111,36,Marketing,Bachelor's,15,1,19617,26,0
+112,37,Sales,High School,26,5,13222,50,1
+113,45,Marketing,Bachelor's,25,1,3386,34,1
+114,44,Marketing,PhD,13,4,4634,20,0
+115,31,Marketing,Master's,16,4,11110,83,0
+116,38,Operations,Master's,7,5,7133,9,0
+117,51,Sales,High School,16,2,12376,71,0
+118,31,Sales,High School,13,4,8581,27,0
+119,40,Marketing,Master's,14,3,4967,65,0
+120,50,IT,Bachelor's,17,4,8767,78,0
+121,23,Operations,High School,12,3,11753,9,0
+122,57,Operations,PhD,29,5,7901,27,0
+123,40,Finance,High School,24,2,13121,83,0
+124,28,Operations,Bachelor's,24,3,17633,86,0
+125,47,Marketing,High School,20,3,13707,29,0
+126,36,HR,PhD,13,4,15333,12,0
+127,59,Marketing,PhD,24,3,14938,99,0
+128,24,Sales,PhD,20,5,14548,25,0
+129,59,Operations,Bachelor's,15,5,18115,6,0
+130,37,Operations,Bachelor's,24,5,12843,26,0
+131,23,Finance,PhD,21,4,7177,76,0
+132,52,HR,PhD,4,2,10211,91,0
+133,49,Operations,Bachelor's,22,4,10873,76,1
+134,28,Finance,Bachelor's,2,5,6841,72,0
+135,51,Finance,Bachelor's,28,4,9416,68,0
+136,28,HR,Master's,18,5,13633,98,0
+137,57,Marketing,Bachelor's,2,1,7885,23,0
+138,50,Marketing,PhD,25,1,3594,91,0
+139,45,Marketing,Master's,15,3,17393,86,1
+140,25,IT,Bachelor's,26,2,5612,57,0
+141,50,Marketing,PhD,19,1,15288,97,1
+142,26,HR,High School,15,5,7861,91,0
+143,50,IT,Master's,26,4,7766,56,1
+144,51,Marketing,PhD,20,4,6358,51,0
+145,50,IT,High School,10,3,17846,86,0
+146,47,HR,PhD,28,4,3914,58,0
+147,40,Marketing,Bachelor's,24,1,4995,48,0
+148,47,Sales,Bachelor's,20,4,3094,11,0
+149,58,Operations,High School,11,1,11684,96,0
+150,48,HR,Bachelor's,26,1,18100,5,0
+151,51,Finance,PhD,10,2,3149,67,0
+152,51,Finance,High School,29,3,5803,43,0
+153,24,HR,PhD,23,5,17466,23,0
+154,28,Finance,PhD,5,1,10276,35,1
+155,30,HR,PhD,9,3,3551,81,0
+156,34,Sales,Bachelor's,20,5,18480,28,0
+157,36,HR,Bachelor's,19,4,11486,73,0
+158,26,Marketing,PhD,13,3,19839,91,0
+159,50,Marketing,Master's,18,3,12745,87,1
+160,56,IT,PhD,17,3,11360,69,0
+161,48,Finance,PhD,27,4,15997,37,0
+162,48,Operations,High School,6,4,10310,63,1
+163,29,Finance,PhD,10,3,8817,37,0
+164,53,HR,Bachelor's,2,2,13568,36,0
+165,41,Operations,High School,24,1,11070,63,1
+166,31,Operations,Master's,6,4,4320,96,0
+167,34,Finance,High School,28,2,9153,45,0
+168,50,Operations,Master's,28,4,9589,16,0
+169,56,Operations,High School,21,3,18589,77,0
+170,29,Marketing,High School,13,2,6607,15,1
+171,50,Sales,Master's,18,5,13317,23,0
+172,52,HR,Bachelor's,7,1,13432,58,0
+173,51,Finance,Bachelor's,2,1,3400,61,0
+174,43,Marketing,Bachelor's,29,4,19746,46,0
+175,42,IT,High School,14,1,6851,75,0
+176,33,Operations,PhD,5,5,13498,35,0
+177,32,Operations,High School,18,2,3084,56,0
+178,23,Finance,PhD,11,2,4824,6,1
+179,23,Sales,PhD,10,3,15077,87,0
+180,55,Sales,Bachelor's,11,2,18930,42,0
+181,24,Finance,PhD,27,4,15549,36,0
+182,37,Finance,High School,2,5,13113,14,0
+183,25,Marketing,High School,15,3,18132,12,0
+184,44,Finance,Bachelor's,7,4,11822,94,0
+185,41,IT,Master's,9,4,10418,98,1
+186,46,Marketing,High School,5,4,5371,79,1
+187,51,Operations,PhD,7,1,10068,24,0
+188,39,Operations,High School,20,4,14859,24,0
+189,32,Operations,High School,2,1,10464,13,0
+190,50,Operations,High School,3,2,16548,76,0
+191,38,HR,Master's,2,1,10121,19,0
+192,47,IT,PhD,21,4,12840,92,0
+193,44,Marketing,Bachelor's,22,5,7312,67,0
+194,41,Marketing,High School,23,5,11000,95,0
+195,23,Operations,PhD,19,2,12461,25,0
+196,45,Sales,PhD,4,4,3318,9,0
+197,52,Marketing,Bachelor's,24,1,18329,39,0
+198,48,IT,High School,20,5,18791,89,1
+199,23,Finance,Master's,7,3,17372,72,1
+200,35,IT,PhD,28,4,18935,52,0
+201,25,Operations,Bachelor's,22,4,18701,84,0
+202,34,Operations,Master's,7,3,14250,99,0
+203,57,HR,PhD,17,5,4602,94,0
+204,56,Marketing,High School,19,3,12047,66,0
+205,29,Marketing,PhD,22,2,18234,39,0
+206,23,Marketing,Master's,16,1,10532,74,0
+207,27,Operations,Master's,3,1,10366,25,0
+208,52,Marketing,High School,15,5,5648,84,0
+209,31,Sales,High School,14,3,9903,43,1
+210,42,Sales,Bachelor's,15,4,16788,38,0
+211,31,Finance,High School,14,4,5481,19,0
+212,44,Marketing,Bachelor's,7,4,4820,10,0
+213,24,HR,Master's,25,2,13271,70,0
+214,53,Finance,Master's,3,2,6684,92,0
+215,41,Operations,PhD,17,4,6651,60,0
+216,31,Marketing,PhD,10,5,13431,53,0
+217,50,Sales,Bachelor's,15,2,13131,96,0
+218,55,HR,High School,29,2,7830,5,0
+219,58,Finance,High School,6,1,10334,69,0
+220,41,HR,PhD,28,1,17619,32,0
+221,29,Marketing,Master's,17,5,12304,24,0
+222,28,IT,Bachelor's,17,2,17879,52,0
+223,27,HR,Master's,14,2,17585,76,0
+224,32,HR,Master's,24,3,3016,69,0
+225,39,Operations,High School,25,5,11308,94,0
+226,50,Sales,Bachelor's,18,5,9476,55,1
+227,46,Marketing,Master's,25,3,8942,47,1
+228,42,HR,PhD,5,3,5693,53,0
+229,24,Marketing,PhD,29,1,18562,29,1
+230,39,Sales,High School,8,5,9259,78,0
+231,45,Operations,PhD,7,5,18579,80,1
+232,59,Marketing,PhD,23,3,12468,45,0
+233,31,Sales,Master's,4,4,7942,75,0
+234,48,Sales,PhD,18,4,17651,68,0
+235,33,Finance,PhD,5,1,6788,65,0
+236,28,Operations,Master's,16,4,3371,16,0
+237,38,Operations,High School,14,4,10120,85,1
+238,22,Marketing,High School,27,4,8702,73,0
+239,47,IT,Bachelor's,27,2,11347,18,0
+240,36,Finance,PhD,19,1,5661,38,0
+241,54,Operations,Master's,14,3,9651,52,0
+242,58,Sales,Bachelor's,9,4,7878,65,0
+243,52,Operations,High School,6,2,16091,85,0
+244,56,IT,High School,17,4,7315,39,0
+245,22,HR,Master's,19,2,12965,69,0
+246,29,HR,Bachelor's,12,1,11308,63,0
+247,33,Operations,Bachelor's,4,4,9474,40,0
+248,40,Operations,Master's,16,2,4374,83,0
+249,46,Finance,Master's,25,5,14395,23,1
+250,53,Operations,Bachelor's,11,5,10393,46,0
+251,33,IT,High School,22,2,7403,73,0
+252,34,Operations,PhD,4,4,6546,23,0
+253,49,Marketing,High School,17,4,6977,43,0
+254,22,IT,Master's,8,1,12388,73,0
+255,27,Finance,Bachelor's,14,1,11988,56,0
+256,29,Marketing,Bachelor's,27,3,6892,16,0
+257,25,Marketing,PhD,2,1,17008,87,0
+258,26,HR,Bachelor's,11,4,6249,51,0
+259,46,IT,PhD,11,3,3111,80,0
+260,43,Marketing,High School,24,1,10400,40,0
+261,49,Finance,High School,22,2,5379,67,0
+262,44,HR,Bachelor's,24,5,16180,80,0
+263,25,Marketing,Bachelor's,6,1,11352,86,0
+264,25,IT,Master's,21,1,11469,55,0
+265,42,HR,Master's,21,2,12748,47,0
+266,58,IT,Bachelor's,14,4,13107,38,0
+267,23,IT,Bachelor's,10,2,15942,53,0
+268,28,IT,High School,26,1,19686,22,0
+269,37,HR,Bachelor's,27,4,7533,65,0
+270,38,Marketing,Master's,8,3,7281,61,0
+271,41,Operations,High School,7,1,7768,97,0
+272,44,Sales,PhD,8,2,15198,9,0
+273,55,Marketing,Master's,28,3,10169,93,0
+274,32,HR,Master's,8,5,10361,28,0
+275,55,Sales,High School,23,3,6830,97,0
+276,54,Sales,PhD,2,2,5882,68,0
+277,47,Sales,Master's,27,3,3998,63,0
+278,23,Operations,Bachelor's,16,2,18942,42,1
+279,44,Finance,Master's,9,1,19668,37,1
+280,43,HR,High School,13,4,19246,14,1
+281,55,Operations,High School,23,5,6065,41,0
+282,36,Operations,High School,12,4,13467,91,0
+283,31,Finance,Master's,27,4,15076,15,0
+284,36,Sales,PhD,22,4,5543,28,0
+285,50,Finance,Bachelor's,25,2,13033,92,0
+286,44,Finance,High School,29,2,4401,75,0
+287,38,Operations,PhD,17,5,19829,25,1
+288,30,HR,Bachelor's,27,2,7522,24,0
+289,57,IT,High School,2,2,5551,14,0
+290,30,Finance,Bachelor's,13,2,7816,93,0
+291,37,Finance,Bachelor's,1,2,10699,51,0
+292,57,Sales,PhD,26,1,5629,51,0
+293,54,Sales,Bachelor's,28,5,10687,19,0
+294,52,Operations,High School,19,2,13156,48,0
+295,27,Sales,PhD,11,5,9834,66,0
+296,31,Marketing,Master's,5,3,7849,10,1
+297,37,Finance,Master's,1,1,18782,70,0
+298,25,Sales,PhD,20,2,18827,80,0
+299,43,HR,Master's,13,1,12431,8,0
+300,34,Marketing,Bachelor's,8,1,7150,27,1
+301,37,Operations,High School,6,3,14289,17,0
+302,50,IT,Bachelor's,29,5,12496,85,0
+303,27,Finance,PhD,17,1,9470,35,0
+304,47,Finance,High School,12,4,16257,20,1
+305,32,HR,PhD,1,3,6712,45,0
+306,45,IT,PhD,3,4,15721,94,0
+307,50,IT,PhD,14,3,15495,96,0
+308,24,Operations,Bachelor's,26,4,15420,5,0
+309,31,Operations,High School,8,4,8315,16,0
+310,22,Marketing,High School,11,1,8381,60,0
+311,47,Finance,High School,27,1,12497,54,0
+312,33,Sales,Bachelor's,14,3,16494,24,1
+313,35,Operations,Master's,8,5,19950,70,0
+314,46,HR,Bachelor's,29,1,18752,40,1
+315,29,HR,Bachelor's,3,1,7622,83,0
+316,25,HR,PhD,7,2,7132,42,0
+317,49,Operations,High School,28,1,11830,26,0
+318,28,Operations,High School,19,5,9995,65,0
+319,31,HR,Master's,4,2,5670,54,0
+320,57,Operations,Master's,25,4,12364,63,0
+321,23,Sales,PhD,16,4,13041,24,0
+322,47,Sales,High School,13,2,12054,40,0
+323,35,Marketing,Master's,20,2,14637,19,0
+324,37,Finance,Master's,19,2,13757,66,0
+325,38,Sales,High School,5,3,11490,7,0
+326,43,Marketing,Bachelor's,23,5,15329,97,1
+327,25,IT,Master's,5,5,3770,95,0
+328,40,Finance,High School,20,4,6854,9,0
+329,23,Sales,Master's,24,4,6118,60,1
+330,30,IT,PhD,4,4,12901,35,1
+331,40,Marketing,Master's,2,1,16522,90,0
+332,37,Sales,High School,26,4,3038,39,0
+333,46,Sales,Master's,13,2,19002,75,0
+334,39,Operations,PhD,16,4,7857,74,0
+335,44,IT,PhD,22,2,19312,30,0
+336,42,Sales,Master's,2,3,4436,5,0
+337,32,HR,Master's,19,1,10693,87,0
+338,25,Operations,PhD,17,1,16218,11,0
+339,46,Operations,PhD,5,5,7251,40,0
+340,53,Sales,Bachelor's,25,3,12305,80,0
+341,51,Operations,Bachelor's,18,2,13590,88,0
+342,47,Finance,PhD,28,3,10662,91,0
+343,57,IT,Master's,23,1,6123,29,0
+344,55,Finance,High School,21,2,7158,98,0
+345,30,Marketing,Master's,18,3,11700,63,0
+346,33,Finance,Master's,8,1,13531,65,0
+347,23,HR,Bachelor's,27,2,12879,33,0
+348,59,Operations,Bachelor's,15,2,8543,99,0
+349,26,Operations,Bachelor's,13,1,16980,22,0
+350,26,HR,PhD,13,2,18156,45,0
+351,43,Operations,PhD,16,1,12580,23,0
+352,26,Finance,Master's,22,4,6911,8,0
+353,25,Marketing,Master's,20,4,16582,69,0
+354,30,Sales,High School,13,2,14120,45,0
+355,50,HR,Master's,20,2,8235,19,0
+356,43,Finance,Master's,2,1,7799,58,1
+357,48,Finance,Bachelor's,3,2,17225,68,0
+358,31,Finance,Bachelor's,15,5,19709,76,0
+359,37,Sales,Bachelor's,23,4,6766,19,1
+360,31,IT,Bachelor's,19,2,7111,83,1
+361,27,Operations,Bachelor's,13,2,10015,54,0
+362,26,Operations,High School,5,3,9856,26,0
+363,27,Marketing,High School,26,2,19490,22,0
+364,46,IT,High School,22,5,5426,84,0
+365,25,Operations,Bachelor's,6,4,17497,6,0
+366,53,Marketing,PhD,14,3,14336,40,0
+367,56,Marketing,Bachelor's,4,1,8316,24,0
+368,31,Finance,Bachelor's,22,1,8362,20,0
+369,55,HR,High School,19,4,7693,71,0
+370,57,Finance,Bachelor's,23,1,11990,34,1
+371,27,Sales,High School,7,5,18133,59,0
+372,37,Operations,Bachelor's,4,2,17178,70,0
+373,40,Marketing,Master's,2,4,13629,30,0
+374,55,HR,PhD,27,3,17751,61,0
+375,46,Operations,PhD,7,2,3425,73,0
+376,52,Marketing,High School,3,1,6044,6,1
+377,38,Marketing,Master's,15,1,14480,60,1
+378,51,Finance,PhD,1,3,14106,88,0
+379,52,HR,High School,2,5,9229,66,0
+380,40,HR,Bachelor's,10,3,4239,38,0
+381,56,Operations,Bachelor's,16,4,9566,60,0
+382,50,Marketing,Master's,25,3,7213,59,0
+383,22,HR,PhD,28,1,6006,24,0
+384,25,HR,Bachelor's,15,5,10025,54,0
+385,49,Operations,High School,24,5,9558,29,0
+386,39,Finance,Bachelor's,15,3,4184,88,0
+387,47,IT,Bachelor's,14,4,17430,29,1
+388,40,Sales,PhD,22,1,11102,57,0
+389,27,IT,PhD,14,2,16869,18,0
+390,22,HR,High School,6,5,10116,64,0
+391,29,Marketing,Master's,14,3,15937,47,0
+392,54,Sales,Master's,17,4,7383,66,0
+393,42,Sales,Bachelor's,18,4,7507,80,0
+394,45,Marketing,High School,20,1,17735,73,0
+395,46,Sales,Master's,19,5,19519,67,0
+396,40,Marketing,Master's,17,1,5025,6,0
+397,50,Sales,Bachelor's,16,2,7854,58,0
+398,31,Operations,High School,8,2,8367,20,1
+399,33,Operations,Master's,7,2,5890,59,1
+400,54,IT,PhD,20,4,6773,98,0
+401,28,Sales,PhD,28,5,18819,47,0
+402,38,Finance,Bachelor's,12,1,4528,65,0
+403,31,Marketing,Bachelor's,9,1,14820,42,0
+404,52,Sales,Bachelor's,27,2,8049,49,0
+405,27,Operations,Bachelor's,14,5,3848,55,0
+406,38,Operations,Master's,20,5,13119,46,0
+407,58,Marketing,High School,1,3,13357,28,0
+408,39,Finance,Bachelor's,10,5,19167,34,0
+409,47,Sales,Bachelor's,17,5,15478,41,1
+410,37,Sales,Master's,17,1,5121,57,0
+411,29,Finance,Bachelor's,17,5,15910,67,0
+412,45,Finance,Bachelor's,4,5,7681,15,0
+413,34,Finance,High School,17,1,17755,82,0
+414,50,Operations,PhD,18,5,3472,27,0
+415,53,Marketing,Bachelor's,20,1,3113,84,0
+416,45,Finance,Master's,23,3,16690,54,0
+417,37,Marketing,High School,2,4,9473,89,0
+418,32,IT,Master's,8,1,11530,59,0
+419,53,Sales,High School,13,1,4196,59,0
+420,27,Sales,High School,23,5,19462,8,1
+421,56,HR,Bachelor's,25,1,9017,58,0
+422,54,IT,Bachelor's,22,2,5652,65,0
+423,39,Finance,Bachelor's,20,2,13832,82,0
+424,58,Finance,PhD,22,3,8385,87,1
+425,34,Operations,PhD,15,1,17708,9,0
+426,31,IT,Master's,20,5,17571,99,0
+427,58,Finance,Bachelor's,23,5,14002,22,1
+428,47,HR,PhD,9,4,6385,48,0
+429,38,Marketing,Bachelor's,3,3,4965,35,0
+430,22,Sales,PhD,3,5,5427,98,0
+431,46,IT,PhD,2,4,5841,25,0
+432,55,Sales,High School,1,5,9563,51,0
+433,31,Marketing,Bachelor's,14,4,17387,34,0
+434,41,IT,Bachelor's,17,2,8840,59,0
+435,28,Marketing,PhD,13,2,18154,72,0
+436,37,Finance,Bachelor's,19,5,17093,73,0
+437,58,Finance,PhD,23,3,7352,45,0
+438,50,Finance,Bachelor's,15,1,3184,49,0
+439,33,Marketing,High School,27,3,13384,78,0
+440,38,Marketing,Bachelor's,25,3,17319,95,0
+441,41,Marketing,High School,14,1,11437,84,1
+442,47,Sales,Master's,2,2,13426,34,0
+443,40,Marketing,Bachelor's,7,2,10504,81,1
+444,33,Finance,Bachelor's,17,1,3600,89,0
+445,42,HR,Bachelor's,18,4,10804,49,0
+446,55,Marketing,High School,6,3,16249,49,0
+447,28,HR,Bachelor's,27,5,8537,83,0
+448,56,Finance,Bachelor's,21,2,17685,88,1
+449,36,Marketing,PhD,8,5,11724,88,1
+450,22,Sales,Master's,28,1,8084,49,0
+451,47,Sales,High School,27,5,5042,59,0
+452,56,HR,PhD,2,5,19741,63,0
+453,46,Operations,High School,1,3,19761,9,0
+454,36,Sales,PhD,16,1,16336,36,0
+455,43,Sales,Master's,7,5,16414,10,0
+456,27,Sales,PhD,22,2,7797,98,0
+457,36,Finance,High School,24,1,6307,30,0
+458,45,Sales,Bachelor's,11,2,16721,41,0
+459,42,IT,Bachelor's,15,4,5596,17,0
+460,28,Marketing,Master's,13,5,14795,97,0
+461,50,Sales,High School,24,1,17984,73,1
+462,53,Operations,High School,2,2,15134,29,0
+463,53,Operations,High School,14,5,13782,17,0
+464,26,Sales,Master's,24,3,12234,92,0
+465,25,Sales,Bachelor's,6,2,17618,99,0
+466,43,IT,PhD,9,2,13027,24,0
+467,39,Sales,Master's,28,4,16986,76,1
+468,56,Sales,PhD,7,3,15400,64,1
+469,38,Marketing,Bachelor's,18,4,6526,77,0
+470,45,Operations,Master's,24,3,14593,25,0
+471,23,IT,Bachelor's,9,2,4622,65,0
+472,34,Operations,PhD,23,4,8518,88,0
+473,36,IT,High School,4,5,5657,83,0
+474,26,Operations,High School,9,3,11699,30,0
+475,24,Sales,PhD,4,2,16955,58,0
+476,58,Operations,High School,12,1,5656,46,0
+477,58,Operations,PhD,4,3,19673,15,0
+478,58,IT,Master's,25,3,8858,41,0
+479,24,HR,Master's,24,5,13401,15,0
+480,56,IT,Master's,20,3,11758,31,0
+481,44,IT,High School,14,3,4473,98,0
+482,49,IT,Bachelor's,24,5,16281,87,0
+483,51,Finance,High School,24,5,18964,38,0
+484,39,Finance,High School,7,4,15057,42,1
+485,57,Finance,Bachelor's,26,2,10673,65,0
+486,54,IT,Bachelor's,13,2,17281,91,0
+487,47,HR,Bachelor's,22,4,6251,57,0
+488,38,IT,Bachelor's,8,2,8054,69,0
+489,28,Sales,High School,23,3,4716,7,0
+490,29,HR,PhD,5,4,12204,71,0
+491,52,Finance,Master's,12,4,17106,32,1
+492,33,Operations,PhD,13,2,4310,18,0
+493,52,Operations,High School,29,1,18882,56,0
+494,40,Marketing,Bachelor's,20,2,7257,34,0
+495,31,HR,Master's,14,1,18846,62,0
+496,33,Finance,Master's,28,4,13420,58,0
+497,41,HR,PhD,18,1,16012,73,0
+498,58,HR,High School,27,3,3468,19,1
+499,28,Operations,High School,24,5,8905,42,0
+500,35,IT,High School,25,1,15308,82,0
+501,32,Sales,Master's,20,5,18634,18,0
+502,28,Marketing,PhD,4,3,17801,61,0
+503,50,Finance,Master's,21,5,12628,63,0
+504,31,HR,Master's,18,3,11728,12,0
+505,50,Marketing,Bachelor's,7,5,14005,76,1
+506,30,HR,PhD,15,5,10890,23,0
+507,57,Operations,Bachelor's,21,2,10077,36,0
+508,31,Sales,High School,6,1,4971,99,1
+509,40,Operations,Master's,16,5,16568,33,1
+510,52,Marketing,PhD,20,4,4191,45,0
+511,38,Finance,High School,24,2,15820,79,1
+512,30,HR,PhD,8,1,10765,49,0
+513,54,Sales,Master's,28,2,13254,17,0
+514,55,Operations,PhD,21,1,6046,31,0
+515,45,Marketing,High School,16,3,14750,23,1
+516,30,Operations,Bachelor's,28,5,15703,30,0
+517,28,HR,Master's,22,4,19688,57,0
+518,37,HR,Bachelor's,16,2,11043,55,0
+519,40,Finance,Master's,3,2,7908,41,0
+520,27,Sales,High School,17,2,13627,13,0
+521,32,IT,Master's,9,2,5804,96,0
+522,33,Operations,Bachelor's,25,5,13176,56,1
+523,34,HR,Master's,3,1,6936,58,0
+524,33,Marketing,High School,20,5,12873,7,0
+525,42,Operations,Master's,29,3,14390,73,0
+526,31,Finance,Bachelor's,7,5,11366,12,1
+527,41,Finance,High School,18,5,17614,18,0
+528,57,HR,Bachelor's,12,3,9506,7,0
+529,49,HR,Master's,19,5,11783,28,1
+530,45,HR,PhD,16,1,14170,17,0
+531,26,IT,Bachelor's,22,4,17609,47,0
+532,58,HR,Master's,27,3,10322,33,0
+533,33,Operations,PhD,24,2,15174,76,1
+534,56,Operations,PhD,17,1,19208,55,0
+535,23,Sales,High School,20,4,5410,46,0
+536,30,Marketing,PhD,15,1,16636,35,1
+537,43,HR,Bachelor's,1,1,12039,67,0
+538,26,Operations,Bachelor's,2,2,17990,30,0
+539,33,Operations,PhD,8,4,9441,22,0
+540,22,Operations,Master's,22,1,11685,86,0
+541,43,IT,Bachelor's,25,2,16778,61,0
+542,59,Marketing,Bachelor's,2,3,16191,11,0
+543,40,Finance,High School,19,2,12732,52,1
+544,37,Operations,Master's,9,5,6956,84,0
+545,52,HR,PhD,9,2,9553,64,0
+546,24,Operations,Master's,13,2,5365,37,0
+547,44,Marketing,High School,6,2,9668,7,0
+548,39,Finance,High School,15,1,8000,8,0
+549,47,IT,Master's,19,4,6675,8,1
+550,34,Sales,High School,21,2,15907,46,0
+551,39,HR,High School,15,2,18136,13,1
+552,24,Sales,High School,18,5,14155,55,0
+553,44,IT,Master's,7,5,15219,21,0
+554,24,Marketing,High School,26,3,6247,21,0
+555,46,Marketing,PhD,11,3,7415,24,0
+556,48,IT,PhD,8,5,9472,18,0
+557,48,Operations,Bachelor's,6,4,7848,26,0
+558,46,IT,PhD,8,3,4037,56,0
+559,45,HR,Bachelor's,2,4,18634,31,0
+560,29,Finance,Master's,19,5,11262,47,0
+561,30,Sales,High School,16,3,14066,7,0
+562,58,Sales,PhD,7,2,18554,92,0
+563,51,Marketing,Bachelor's,10,5,10008,98,0
+564,40,Operations,Master's,12,3,18263,12,0
+565,37,Marketing,Bachelor's,17,4,19238,90,0
+566,45,HR,High School,7,4,8642,93,0
+567,42,IT,PhD,22,3,19489,14,0
+568,57,Sales,Master's,8,4,17531,33,0
+569,27,HR,Bachelor's,7,3,13384,44,0
+570,26,Marketing,Master's,4,3,19336,69,1
+571,35,Marketing,Bachelor's,3,4,16661,25,0
+572,25,Sales,Bachelor's,19,1,14687,28,0
+573,29,Marketing,High School,15,2,16404,77,0
+574,45,Operations,High School,4,5,7355,64,0
+575,32,Marketing,Bachelor's,25,2,3933,30,0
+576,38,Finance,PhD,9,5,11766,13,1
+577,42,IT,Master's,13,5,8906,24,0
+578,47,Marketing,Master's,18,2,15572,60,0
+579,48,Finance,High School,21,3,15279,40,0
+580,37,HR,PhD,16,4,13723,40,0
+581,47,Marketing,Bachelor's,1,1,13611,77,1
+582,54,Operations,High School,4,1,11261,26,0
+583,52,HR,Bachelor's,18,1,7474,5,0
+584,27,Marketing,Bachelor's,8,2,19638,73,0
+585,29,Sales,High School,20,2,7787,77,0
+586,28,Finance,PhD,16,3,16575,41,0
+587,55,Finance,Master's,21,1,10862,87,1
+588,35,Sales,High School,11,3,13956,76,0
+589,37,IT,PhD,20,1,13663,17,0
+590,30,Operations,Bachelor's,21,2,19120,88,0
+591,31,Finance,High School,21,4,6742,47,0
+592,38,HR,Master's,21,4,5035,41,0
+593,33,Operations,Master's,27,4,4967,98,0
+594,27,Finance,Bachelor's,19,4,4852,78,0
+595,40,IT,High School,23,5,13547,99,0
+596,50,HR,Master's,19,1,9618,29,1
+597,27,Operations,High School,18,4,16859,97,0
+598,46,HR,Master's,19,5,11303,92,0
+599,45,Sales,Bachelor's,11,5,14350,25,0
+600,46,Marketing,Bachelor's,3,5,19566,45,0
+601,37,Sales,High School,8,3,3164,77,0
+602,37,Operations,PhD,20,3,9958,46,1
+603,27,Marketing,PhD,19,5,5137,46,0
+604,58,Sales,Bachelor's,10,4,13215,6,0
+605,42,Marketing,Master's,16,1,19838,72,0
+606,25,Finance,PhD,5,2,19925,12,0
+607,55,HR,Bachelor's,20,3,9033,65,0
+608,49,Marketing,Master's,9,4,5665,18,1
+609,59,Finance,Master's,8,4,16129,81,0
+610,49,IT,PhD,11,2,15125,25,0
+611,38,Sales,Bachelor's,16,2,9189,28,0
+612,35,IT,Master's,7,4,16708,54,0
+613,28,Operations,Master's,15,2,8095,86,0
+614,43,Finance,High School,24,4,17409,49,1
+615,22,IT,High School,29,2,10583,68,0
+616,50,IT,PhD,21,2,4637,68,1
+617,52,Finance,High School,20,4,17670,30,0
+618,51,HR,Bachelor's,23,5,8966,36,0
+619,36,Marketing,PhD,17,4,7670,61,0
+620,39,Operations,PhD,6,1,8203,57,0
+621,56,Operations,High School,15,2,11669,37,1
+622,51,Sales,Master's,8,3,17968,56,0
+623,55,Marketing,Bachelor's,7,2,5366,99,0
+624,32,Sales,Bachelor's,2,1,3366,22,0
+625,48,Operations,Bachelor's,13,3,18647,39,0
+626,45,Marketing,PhD,23,3,12907,16,0
+627,56,IT,Bachelor's,29,4,9606,55,0
+628,29,HR,Master's,6,5,3012,93,0
+629,39,IT,Master's,29,4,5317,99,0
+630,34,HR,High School,5,3,18429,14,0
+631,45,Finance,Bachelor's,20,3,10485,56,0
+632,44,Sales,PhD,1,5,19759,38,1
+633,33,Sales,High School,29,2,3256,71,0
+634,51,Finance,Master's,18,5,19833,43,1
+635,52,Marketing,Bachelor's,15,4,18903,12,0
+636,49,Finance,Master's,23,2,6212,33,0
+637,43,Operations,High School,10,4,9175,26,0
+638,49,Finance,Master's,3,5,16571,88,0
+639,34,HR,Bachelor's,5,2,19087,74,1
+640,46,Operations,Bachelor's,24,5,10446,65,0
+641,28,Finance,High School,29,1,17877,47,0
+642,27,Sales,Bachelor's,13,3,15943,53,0
+643,45,IT,Master's,8,2,13306,33,0
+644,40,HR,Master's,22,3,7016,85,0
+645,40,HR,PhD,21,1,8912,35,0
+646,57,Marketing,PhD,29,2,3442,57,0
+647,30,IT,PhD,2,3,5944,38,0
+648,57,HR,Master's,9,3,6936,42,0
+649,59,Finance,Master's,17,2,3398,61,0
+650,50,HR,High School,27,3,18696,8,0
+651,45,HR,PhD,18,3,5995,6,0
+652,26,HR,Master's,13,2,9329,16,0
+653,47,Marketing,High School,1,3,5216,39,0
+654,35,HR,Master's,12,3,14523,74,0
+655,50,HR,High School,20,4,5568,76,0
+656,27,Marketing,PhD,20,4,3160,25,0
+657,28,Operations,PhD,21,1,18648,65,0
+658,58,IT,PhD,5,4,11067,39,0
+659,39,Operations,Master's,8,4,6904,52,1
+660,44,Sales,Master's,27,1,6573,19,1
+661,59,Marketing,High School,15,3,4825,75,0
+662,22,Marketing,Bachelor's,27,3,16786,19,0
+663,25,HR,Bachelor's,3,4,12815,10,1
+664,56,HR,PhD,6,1,16794,85,0
+665,44,Sales,Bachelor's,28,3,4176,72,0
+666,48,HR,PhD,13,5,10820,26,0
+667,47,Finance,High School,12,2,19514,36,0
+668,29,HR,Bachelor's,19,2,4499,26,0
+669,37,HR,Bachelor's,29,2,10626,31,1
+670,24,Finance,PhD,18,4,19137,19,0
+671,53,Sales,High School,24,2,6708,48,0
+672,26,Finance,Bachelor's,1,2,4769,90,0
+673,41,Marketing,Bachelor's,25,5,12510,96,0
+674,35,Finance,Bachelor's,27,3,17226,13,0
+675,53,IT,High School,7,5,18634,38,0
+676,47,Marketing,High School,12,4,9731,77,0
+677,27,HR,Bachelor's,10,2,13965,19,1
+678,57,Marketing,PhD,29,3,3375,66,0
+679,26,Sales,PhD,12,2,18517,49,0
+680,34,Sales,Bachelor's,11,2,9218,88,0
+681,53,Finance,High School,4,4,11495,76,0
+682,37,Marketing,Bachelor's,19,2,4085,62,0
+683,22,HR,High School,6,1,16073,96,1
+684,34,Sales,Bachelor's,25,3,14371,23,1
+685,32,Operations,High School,9,3,14226,20,0
+686,29,HR,Master's,20,1,13046,79,0
+687,46,Operations,PhD,10,4,19651,12,0
+688,53,IT,Master's,5,2,14041,37,0
+689,45,Operations,PhD,27,2,7349,78,0
+690,49,Sales,High School,13,3,7965,22,1
+691,35,Finance,Master's,9,4,16492,39,0
+692,24,IT,PhD,2,4,16336,47,0
+693,57,Marketing,Bachelor's,18,4,15684,54,0
+694,48,HR,High School,21,2,9654,7,0
+695,41,Sales,High School,1,4,10342,95,0
+696,36,IT,Bachelor's,24,1,5358,63,0
+697,48,IT,Bachelor's,21,5,9360,32,0
+698,49,Sales,PhD,12,4,6743,50,0
+699,46,Marketing,High School,10,5,10159,68,0
+700,54,Marketing,PhD,2,2,3518,74,0
+701,35,Finance,Bachelor's,28,4,19652,51,0
+702,29,Operations,High School,9,3,15925,18,1
+703,35,Marketing,Bachelor's,2,2,17810,11,0
+704,22,Finance,PhD,23,1,19239,78,0
+705,37,Operations,PhD,24,1,8475,83,0
+706,39,IT,PhD,22,5,7185,35,0
+707,28,Sales,High School,14,5,8161,97,0
+708,36,Marketing,Bachelor's,11,3,12580,85,0
+709,45,Finance,Bachelor's,23,3,12886,55,0
+710,34,IT,PhD,11,1,14465,33,0
+711,30,Marketing,PhD,17,4,14221,19,0
+712,36,HR,PhD,4,1,5335,94,0
+713,56,IT,PhD,13,1,6674,80,0
+714,45,Marketing,Master's,7,3,7576,29,0
+715,54,IT,Master's,16,5,17972,65,0
+716,37,Sales,Master's,1,3,3500,45,0
+717,29,Sales,PhD,13,3,11083,73,0
+718,50,Sales,PhD,1,3,11294,8,0
+719,44,Operations,Bachelor's,11,1,18720,61,1
+720,52,HR,High School,6,4,8543,35,1
+721,35,Sales,Bachelor's,20,1,6276,7,0
+722,51,HR,Master's,3,2,9613,71,0
+723,48,Sales,Bachelor's,12,3,14729,94,0
+724,37,Operations,PhD,5,3,4327,54,0
+725,27,IT,Master's,9,2,10772,21,0
+726,54,Marketing,Master's,26,3,13666,64,0
+727,39,Marketing,High School,26,3,19289,78,0
+728,37,Sales,High School,12,3,8769,70,0
+729,33,Marketing,Master's,28,2,16663,92,0
+730,41,Sales,Master's,27,1,8918,79,0
+731,50,Sales,Bachelor's,10,3,7555,28,0
+732,51,Finance,Master's,19,4,5394,91,0
+733,47,Finance,PhD,5,2,3666,36,0
+734,43,Finance,Bachelor's,26,5,15355,91,0
+735,54,HR,PhD,5,2,5234,23,0
+736,50,Finance,PhD,9,1,9335,70,0
+737,43,Sales,PhD,27,2,14503,64,0
+738,34,Operations,Master's,28,5,9359,70,0
+739,30,Operations,High School,26,4,19560,19,0
+740,45,IT,High School,27,5,16876,89,0
+741,36,Finance,PhD,20,2,5928,39,0
+742,57,Operations,Master's,17,5,10617,73,0
+743,34,Finance,Bachelor's,10,2,10614,31,0
+744,48,IT,PhD,21,4,7274,92,0
+745,58,Operations,Bachelor's,1,4,7971,11,0
+746,28,Sales,Bachelor's,22,1,11389,10,1
+747,29,HR,Master's,28,4,5504,37,0
+748,58,Finance,Master's,16,3,9006,62,0
+749,35,Operations,High School,26,5,10943,53,0
+750,33,Operations,High School,26,5,3923,21,0
+751,57,IT,Master's,15,2,19854,46,0
+752,38,Sales,PhD,23,4,13246,98,0
+753,50,Marketing,High School,17,1,15475,76,0
+754,48,Operations,Bachelor's,26,1,6086,44,0
+755,22,HR,PhD,20,1,17860,50,0
+756,55,IT,Bachelor's,25,3,10407,75,1
+757,25,Operations,Master's,13,4,3774,74,0
+758,45,Operations,Bachelor's,1,1,11709,72,0
+759,42,IT,PhD,25,3,19311,5,1
+760,54,IT,Master's,8,5,4343,83,1
+761,28,Finance,PhD,5,2,13161,99,0
+762,22,Operations,Bachelor's,6,4,14419,93,0
+763,24,Marketing,PhD,23,4,10797,56,0
+764,36,HR,Master's,20,5,3934,39,0
+765,52,Sales,Bachelor's,14,4,4986,73,1
+766,37,Sales,Bachelor's,22,4,17016,9,0
+767,31,Marketing,High School,23,4,8465,21,0
+768,50,IT,High School,11,4,12966,57,1
+769,27,IT,PhD,6,3,18721,56,0
+770,50,IT,High School,11,3,4505,18,0
+771,38,Operations,High School,13,2,8363,33,1
+772,43,IT,High School,12,4,18940,12,0
+773,45,IT,High School,22,5,13846,5,0
+774,38,Operations,Master's,2,1,4010,33,0
+775,42,Operations,Master's,21,2,17924,40,0
+776,32,Marketing,High School,3,1,16482,55,0
+777,28,Finance,PhD,23,1,12369,41,0
+778,26,Operations,Master's,4,4,6857,97,1
+779,42,HR,High School,17,5,12864,73,0
+780,39,IT,Master's,28,1,13120,57,0
+781,56,Finance,Bachelor's,28,1,14370,56,0
+782,41,Sales,Master's,22,2,5553,92,0
+783,36,Marketing,Master's,6,5,18489,87,0
+784,26,Finance,PhD,7,5,7389,16,0
+785,34,Operations,Master's,15,1,19935,56,0
+786,33,IT,PhD,11,5,14089,5,0
+787,42,IT,Bachelor's,24,2,12231,11,1
+788,58,IT,High School,3,2,6051,21,0
+789,27,Finance,PhD,6,2,8322,47,0
+790,28,IT,Master's,26,4,14789,75,0
+791,47,Operations,Master's,2,1,5555,21,1
+792,29,Finance,PhD,29,5,15767,63,0
+793,30,IT,Bachelor's,14,2,3458,7,0
+794,48,Sales,High School,9,1,18701,33,0
+795,25,Sales,Master's,18,1,19066,26,0
+796,42,HR,Bachelor's,19,4,7721,42,0
+797,52,IT,High School,12,5,15446,58,0
+798,42,IT,High School,13,5,9304,97,0
+799,46,Finance,Master's,26,2,16565,54,1
+800,36,Finance,PhD,12,2,13199,73,0
+801,56,IT,Master's,12,1,4920,34,0
+802,58,HR,Master's,18,5,16227,27,0
+803,49,IT,Master's,9,5,10694,89,0
+804,35,Operations,Bachelor's,17,2,9298,94,0
+805,25,Finance,PhD,21,3,9629,51,0
+806,41,IT,Bachelor's,16,1,15719,25,0
+807,55,Finance,Master's,17,5,8146,24,0
+808,33,IT,PhD,21,4,13306,27,0
+809,54,Marketing,High School,24,4,5589,72,0
+810,45,Finance,PhD,8,3,7310,25,0
+811,41,HR,Master's,11,2,5241,25,0
+812,26,Marketing,PhD,24,2,16601,5,0
+813,59,Operations,High School,2,2,10711,19,0
+814,51,IT,High School,8,4,3938,21,0
+815,45,Operations,PhD,12,2,7301,55,1
+816,28,Finance,High School,21,4,6970,67,1
+817,57,Marketing,Bachelor's,1,3,6999,18,1
+818,59,Operations,PhD,23,1,6408,63,0
+819,37,HR,High School,13,5,16807,87,0
+820,36,Finance,High School,22,3,11962,54,0
+821,44,Marketing,PhD,21,4,19632,38,0
+822,33,Operations,Bachelor's,17,3,16385,10,0
+823,50,Marketing,PhD,14,5,8950,53,1
+824,36,Marketing,High School,14,1,5926,10,0
+825,50,Operations,PhD,16,5,10975,73,0
+826,42,Sales,High School,17,4,9966,11,0
+827,36,IT,Master's,6,5,12133,81,1
+828,35,Finance,PhD,26,3,9587,55,0
+829,37,Finance,PhD,28,2,8091,5,0
+830,36,Finance,High School,7,3,11985,17,1
+831,25,Marketing,High School,26,4,4561,47,0
+832,48,Operations,High School,26,1,11644,31,0
+833,44,IT,High School,1,5,17785,75,0
+834,50,HR,PhD,25,1,6656,7,0
+835,30,Finance,High School,15,4,19139,62,0
+836,28,Operations,PhD,20,5,3209,93,0
+837,25,IT,Bachelor's,21,3,7983,21,1
+838,26,IT,PhD,18,3,10141,49,0
+839,26,Sales,High School,28,4,13118,82,0
+840,32,Operations,High School,26,5,19261,62,0
+841,49,Finance,Bachelor's,13,3,6966,60,0
+842,37,Marketing,PhD,24,4,13069,58,0
+843,51,IT,Bachelor's,2,4,11818,91,0
+844,25,IT,PhD,19,1,13918,92,0
+845,23,HR,High School,15,3,12650,33,0
+846,24,Sales,PhD,12,5,4250,58,0
+847,42,IT,High School,15,3,7758,31,0
+848,27,IT,High School,25,3,7363,49,0
+849,39,Marketing,Master's,18,3,5163,91,0
+850,26,Marketing,Master's,14,4,12815,35,0
+851,30,HR,PhD,6,2,4853,40,0
+852,41,Operations,High School,12,2,4868,85,0
+853,49,HR,Bachelor's,20,1,19565,65,0
+854,47,HR,High School,23,3,18568,41,1
+855,39,Marketing,Bachelor's,6,2,12094,71,0
+856,40,Operations,PhD,26,1,8238,40,0
+857,24,Marketing,PhD,9,4,10089,9,0
+858,30,Sales,Bachelor's,25,3,8280,50,0
+859,57,Finance,Bachelor's,26,5,7244,83,0
+860,52,Finance,High School,4,4,5164,56,0
+861,38,Sales,PhD,17,1,18149,53,0
+862,44,Finance,High School,2,4,17088,10,0
+863,55,Operations,Bachelor's,16,5,5821,14,0
+864,26,Marketing,Master's,24,4,13473,27,0
+865,36,Finance,Master's,14,1,16686,21,1
+866,24,Operations,Master's,26,5,12762,88,1
+867,40,Marketing,Bachelor's,8,5,8969,48,0
+868,49,Operations,High School,14,4,15178,45,0
+869,24,Sales,PhD,2,5,9168,19,0
+870,59,HR,Bachelor's,16,4,17096,48,0
+871,25,Sales,Master's,4,3,10203,62,1
+872,45,Finance,High School,1,5,6545,90,0
+873,52,Marketing,PhD,23,4,3863,54,0
+874,32,Operations,PhD,20,3,19148,56,0
+875,58,Finance,Bachelor's,27,5,3653,74,0
+876,22,Finance,Bachelor's,14,3,11129,72,0
+877,30,HR,PhD,8,5,3443,67,0
+878,38,Finance,PhD,25,1,8106,62,0
+879,22,HR,Master's,28,1,7436,27,0
+880,24,Marketing,PhD,25,4,12472,48,0
+881,47,Marketing,Bachelor's,3,2,6039,87,0
+882,52,Operations,High School,5,1,11291,99,0
+883,47,HR,Master's,6,2,13278,48,0
+884,44,Sales,Master's,22,3,19285,56,0
+885,51,Marketing,PhD,26,3,16944,71,1
+886,31,Operations,High School,8,2,5737,32,1
+887,29,Sales,Master's,6,4,4607,71,1
+888,46,Marketing,Bachelor's,6,5,5953,82,0
+889,43,Marketing,PhD,4,2,15173,22,1
+890,36,Operations,Bachelor's,7,2,8933,31,0
+891,31,Operations,PhD,24,2,14386,55,1
+892,41,IT,Master's,19,2,18221,64,0
+893,44,Finance,PhD,7,2,7682,78,1
+894,22,Finance,High School,3,4,17853,53,0
+895,23,Sales,Bachelor's,8,1,14284,19,0
+896,40,Finance,High School,1,5,14154,87,0
+897,35,Sales,Bachelor's,1,1,12047,77,0
+898,29,Marketing,Bachelor's,14,2,13338,72,0
+899,59,IT,PhD,6,1,17323,19,0
+900,33,IT,Master's,10,4,7925,55,0
+901,47,Marketing,Master's,25,3,8783,52,0
+902,48,Operations,High School,28,1,15343,76,0
+903,50,HR,PhD,14,5,12917,5,0
+904,36,HR,Master's,4,4,13145,11,0
+905,22,Finance,Bachelor's,6,3,9723,57,0
+906,49,Operations,Bachelor's,16,4,19568,35,0
+907,24,Sales,PhD,28,2,19905,22,0
+908,39,IT,High School,21,3,16349,16,0
+909,55,Finance,PhD,28,5,4002,52,0
+910,53,Marketing,High School,1,3,9266,34,0
+911,50,Operations,PhD,6,5,14330,11,0
+912,46,IT,Bachelor's,9,2,17980,96,0
+913,47,Sales,PhD,15,5,10017,7,1
+914,29,Sales,Master's,12,4,11585,67,0
+915,40,HR,Master's,3,1,19011,10,0
+916,43,Finance,PhD,11,4,8524,99,0
+917,50,Marketing,High School,15,4,8250,19,0
+918,54,IT,High School,3,3,10512,75,0
+919,59,Sales,Bachelor's,14,2,3319,47,0
+920,56,IT,Bachelor's,2,1,13416,98,0
+921,24,Marketing,High School,29,5,6600,95,0
+922,40,IT,PhD,4,3,8279,85,0
+923,31,Finance,Bachelor's,26,2,18494,22,0
+924,48,HR,High School,19,1,15398,26,1
+925,36,IT,High School,12,4,3282,65,0
+926,32,Operations,PhD,2,2,17030,65,0
+927,47,HR,Master's,17,2,18302,57,1
+928,45,Marketing,High School,3,2,8166,30,0
+929,34,HR,Bachelor's,10,4,10121,95,0
+930,53,IT,PhD,16,5,17677,44,0
+931,58,IT,PhD,22,3,19373,92,0
+932,25,Operations,PhD,9,5,7896,12,0
+933,34,Sales,Master's,11,1,19514,25,0
+934,30,Operations,Master's,21,3,4293,97,0
+935,55,IT,Bachelor's,15,1,9957,47,0
+936,58,HR,Bachelor's,3,4,19444,25,0
+937,28,Operations,PhD,16,5,12740,7,0
+938,22,Operations,Bachelor's,21,2,15559,35,0
+939,33,Sales,High School,21,3,12973,31,0
+940,42,IT,Master's,21,2,9276,31,0
+941,32,IT,PhD,28,1,11152,77,0
+942,35,Marketing,PhD,12,2,10973,61,0
+943,55,Sales,High School,23,2,18333,37,1
+944,55,Marketing,High School,5,4,3037,94,0
+945,46,Marketing,High School,7,4,8990,96,0
+946,25,Marketing,High School,9,5,8438,48,1
+947,47,Finance,PhD,21,1,18735,47,0
+948,37,Marketing,Master's,18,4,13856,35,1
+949,31,Operations,Master's,21,4,3473,69,0
+950,23,HR,High School,8,5,3058,88,0
+951,56,Operations,Bachelor's,12,3,5636,80,0
+952,40,Operations,PhD,20,5,17834,21,0
+953,27,IT,Master's,2,2,18577,19,0
+954,40,Finance,High School,10,2,10296,38,1
+955,29,Marketing,Bachelor's,19,4,15670,84,0
+956,35,IT,Bachelor's,9,4,12725,8,0
+957,31,Sales,High School,25,5,5674,76,0
+958,24,Sales,PhD,24,5,18796,93,0
+959,59,IT,Master's,8,1,14065,83,0
+960,50,HR,Bachelor's,24,2,14026,32,0
+961,36,IT,Master's,24,5,5076,77,0
+962,44,IT,Master's,24,3,7787,6,0
+963,44,Finance,Bachelor's,1,1,10494,21,0
+964,39,Sales,High School,6,5,5581,62,1
+965,40,Sales,Bachelor's,12,4,18600,78,0
+966,49,Marketing,Bachelor's,25,5,17333,13,0
+967,47,Operations,PhD,24,4,13404,35,0
+968,31,IT,Master's,19,4,14166,70,0
+969,25,IT,High School,27,2,3932,92,0
+970,23,HR,Master's,17,2,11748,66,1
+971,24,Sales,Bachelor's,2,5,18577,23,0
+972,28,HR,High School,11,5,18015,85,0
+973,37,Finance,High School,18,3,19108,78,0
+974,52,Marketing,High School,23,1,4104,59,0
+975,31,HR,High School,28,1,15936,32,0
+976,40,Sales,PhD,22,5,12601,96,1
+977,49,Finance,High School,11,2,6646,54,0
+978,38,IT,Bachelor's,18,3,17960,69,0
+979,49,Finance,PhD,8,1,17878,7,0
+980,40,Operations,Bachelor's,15,5,12145,83,0
+981,58,HR,Bachelor's,9,2,5802,56,0
+982,44,Sales,Master's,15,2,19365,14,0
+983,41,HR,High School,7,2,9105,25,0
+984,34,IT,High School,20,4,5749,41,1
+985,34,IT,Bachelor's,13,2,19974,19,0
+986,32,Sales,High School,13,5,13181,91,0
+987,36,Operations,PhD,1,3,4361,82,0
+988,38,Marketing,Master's,20,5,6773,83,0
+989,49,Finance,High School,4,2,16495,78,1
+990,40,Finance,High School,24,3,5064,13,0
+991,25,IT,PhD,4,1,8616,48,0
+992,43,HR,Master's,4,1,10975,43,0
+993,43,HR,PhD,13,5,13960,9,0
+994,58,Operations,Bachelor's,2,3,18324,29,0
+995,55,Marketing,Bachelor's,28,5,9243,60,0
+996,54,HR,High School,26,3,12560,94,0
+997,54,Finance,Master's,23,3,17684,68,1
+998,33,HR,Bachelor's,15,5,11330,76,0
+999,23,Marketing,PhD,4,3,7923,90,1
+1000,49,Finance,Bachelor's,27,2,9467,56,0
