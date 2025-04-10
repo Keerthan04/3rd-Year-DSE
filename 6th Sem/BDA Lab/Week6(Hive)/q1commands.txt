@@ -41,7 +41,7 @@ create table web_log_partitioned (log_id INT,ip_address STRING,url string,status
 //if by year then this one
 insert into web_log_partitioned partition(log_date) select log_id,ip_address,url,status_code,response_time,YEAR(TO_DATE(log_date)) as log_date from web_log;
 
-//normal date
+//normal date(here only when inseting to partition always shd the partition column(log_date) shd be last in select statement)
 insert into web_log_partitioned partition(log_date) select log_id,ip_address,url,status_code,response_time,log_date from web_log;
 
 select * from web_log_partitioned where log_date='2024-01-01';
