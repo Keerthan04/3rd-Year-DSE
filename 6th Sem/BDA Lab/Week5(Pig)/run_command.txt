@@ -1,0 +1,13 @@
+cd /usr/local/pig/bin
+
+mr-jobhistory-daemon.sh start historyserver
+newer version is
+mapred --daemon start historyserver
+
+
+./pig -x mapreduce /workdir/a.pig
+
+mapred --daemon stop historyserver
+
+note
+when naming the relation and all dont give same name like limit and all give different names

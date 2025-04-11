@@ -122,3 +122,19 @@ Took 0.0092 seconds
 6->(to delete all columns we need to use this delete all else (delete 'students', '1', 'contact:email' then only that column))
 
 deleteall 'transactions', 'T002'
+
+if we want to add new column family then do this
+# Add new column family 'address' to students table
+alter 'students', 'address'
+then can do 
+put 'students', 'row1', 'address:city', 'Bangalore'
+
+
+if we want to delete a column family the do this
+disable 'students'
+alter 'students', NAME => 'academic', METHOD => 'delete'
+enable 'students'
+Deleting a column family will delete all its data permanently.
+
+want help of any command then do 
+help 'scan'

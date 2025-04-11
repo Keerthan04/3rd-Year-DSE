@@ -307,6 +307,14 @@ ROW                                             COLUMN+CELL
 4 row(s)
 Took 0.0295 seconds
 
+if we need to do 2 filters on scan like filter then only 2 columns and all or any number of operations on scan like these then
+scan 'students',{
+    FILTER => "SingleColumnValueFilter('academic','marks',>=,'binary:60')",
+    COLUMNS => ['personal:name','academic:marks']
+    if more then...
+    }
+shd be like this 
+
 6->(normal one works well sometimes as string stored numeric comparision problem so then change insertion with numerics like(put 'employees', 'E102', 'salary:basic_pay', 60000))
 
 if with columns then 
@@ -366,6 +374,7 @@ ROW                                             COLUMN+CELL
 Took 0.0217 seconds
 
 9->(if string also use binary(as hbase stores as byte and all or some reason) and for equal its just = not ==)
+scan 'students',{FILTER=>"SingleColumnValueFilter('personal','name',=,'binary:Alice')"}//if string also binary and = shd be used
 
 scan 'employees', { FILTER => "SingleColumnValueFilter('details', 'department', =, 'binary:IT')" }
 ROW                                             COLUMN+CELL
