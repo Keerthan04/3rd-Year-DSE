@@ -1,0 +1,14 @@
+IMP Points
+
+- in spark whenever with low level RDDs or textfile use SparkContext,for json csv or parquet and all use SparkSession(internally will create the sparkcontext)
+
+
+df.groupBy('Product')\
+  .agg(_sum('Amount').alias('TotalAmount'))\
+  .orderBy(col('TotalAmount').desc())\
+  .show(5)
+
+df.filter((col('Date') >= '2024-04-01') & (col('Date') <= '2024-04-05'))\
+  .select('CustomerID')\
+  .distinct()\
+  .show()
