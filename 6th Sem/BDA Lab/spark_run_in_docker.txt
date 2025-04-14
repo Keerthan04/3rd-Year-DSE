@@ -1,0 +1,4 @@
+spark-submit \
+  --master local[*] \
+  --conf "spark.hadoop.fs.defaultFS=hdfs://master:9000" \
+  /workdir/endsem/q.py

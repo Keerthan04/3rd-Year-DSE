@@ -59,7 +59,14 @@ select * from web_log_bucketed where status_code = 404;
 2	192.168.1.2	/product	404	60ms	2024-01-01
 
 
-
+//order of execution is
+SELECT dept, AVG(marks) AS avg_marks
+FROM students
+WHERE marks > 40
+GROUP BY dept
+HAVING avg_marks > 50
+ORDER BY avg_marks DESC
+LIMIT 3;
 
 
 
